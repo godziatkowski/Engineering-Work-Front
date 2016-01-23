@@ -1,0 +1,53 @@
+<h3>
+    Users
+</h3>
+
+<div class="row" ng-if="!users.length">
+    <div class="col-xs-6 col-xs-offset-3 alert alert-warning">
+        <h3>
+            <i class="fa fa-exclamation-triangle"></i> No Users found
+        </h3>
+    </div>
+</div>
+<div ng-if="users.length">
+    <div class="row row-header-top-with-bottom">
+        <div class="col-xs-3">
+            Login
+        </div>
+        <div class="col-xs-3">
+            First name
+        </div>
+        <div class="col-xs-3">
+            Last name
+        </div>
+        <div class="col-xs-3">
+            User roles
+        </div>
+    </div>
+    <div class="row row-custom" ng-repeat="user in users">
+        <div class="col-xs-3">
+            {{user.login}}
+        </div>
+        <div class="col-xs-3">
+            {{user.firstName}}
+        </div>
+        <div class="col-xs-3">
+            {{user.lastName}}
+        </div>
+        <div class="col-xs-3">
+            <div class="row">
+                <div class="col-xs-6">
+                    <span ng-repeat=" userRole in user.userRoles">
+                        {{userRole}}<span ng-if="!$last">,&nbsp;</span>
+                    </span>
+                </div>
+                <div class="col-xs-6 text-center">
+                    <button id="user-list-button-grant-admin-role" class="btn btn-block btn-primary" type="button" 
+                        ng-click="openGrantAdminRightsModal(user)" ng-disabled="user.userRoles.indexOf('ADMIN') !== -1">
+                        <i class="fa fa-user-plus"></i> Grant admin role
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

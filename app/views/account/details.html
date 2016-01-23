@@ -1,0 +1,59 @@
+<h3>
+    Account Details
+</h3>
+
+<div class="panel">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-4 col-xs-offset-2">
+                <div class="row">
+                    <div class="col-sm-3 text-right">
+                        <label>
+                            Login
+                        </label>
+                    </div>
+                    <div class="col-sm-4 ">
+                        {{accountData.login}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 text-right">
+                        <label>
+                            First name
+                        </label>
+                    </div>
+                    <div class="col-sm-4 ">
+                        {{accountData.firstName}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 text-right">
+                        <label>
+                            Last name
+                        </label>
+                    </div>
+                    <div class="col-sm-4 ">
+                        {{accountData.lastName}}
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-5">                        
+                <div class="row">
+                    <div class="col-sm-6">
+                        <button id="account-details-button-edit-account" class="btn btn-primary btn-block" type="button" ng-click="openEditDetailsModal()">
+                            <i class="fa fa-pencil"></i> Edit Account
+                        </button>
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <button id="account-details-button-change-password" class="btn btn-primary btn-block" type="button" ng-click="openChangePasswordModal()">
+                            <i class="fa fa-pencil"></i> Change password
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
