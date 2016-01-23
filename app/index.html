@@ -35,20 +35,82 @@
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/AngularJS-Toaster/toaster.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+    <script src="bower_components/ng-sortable/dist/ng-sortable.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/fullcalendar/dist/fullcalendar.js"></script>
+    <script src="bower_components/angular-ui-calendar/src/calendar.js"></script>
+    <script src="bower_components/clockpicker/dist/jquery-clockpicker.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/app.config.js"></script>
+    
+    <script src="scripts/account/account-change-password-modal.controller.js"></script>
+    <script src="scripts/account/account-details-controller.js"></script>
+    <script src="scripts/account/account-edit-details-modal.controller.js"></script>
+    <script src="scripts/account/account.route.js"></script>
+    <script src="scripts/account/account.service.js"></script>
+
+    <script src="scripts/auth/activate.service.js"></script>
+    <script src="scripts/auth/auth.oauth2.service.js"></script>
+    <script src="scripts/auth/auth.service.js"></script>
+    <script src="scripts/auth/authority.directive.js"></script>
+    <script src="scripts/auth/principal.service.js"></script>
+    
+    <script src="scripts/building/building-add-modal.controller.js"></script>
+    <script src="scripts/building/building-calendar.controller.js"></script>
+    <script src="scripts/building/building-details.controller.js"></script>
+    <script src="scripts/building/building-edit-modal.controller.js"></script>
+    <script src="scripts/building/building-list.controller.js"></script>
+    <script src="scripts/building/building-mark-as-not-usable-modal.controller.js"></script>
+    <script src="scripts/building/building-mark-as-usable-modal.controller.js"></script>
+    <script src="scripts/building/building.route.js"></script>
+    <script src="scripts/building/building.service.js"></script>
+
+    <script src="scripts/dashboard/dashboard.controller.js"></script>
+    <script src="scripts/dashboard/dashboard.route.js"></script>
+    
+    <script src="scripts/interceptor/auth.interceptor.js"></script>
+
+    <script src="scripts/login/login.controller.js"></script>    
+    <script src="scripts/login/login.route.js"></script>
+
+    <script src="scripts/navbar/navbar.controller.js"></script>
+
+    <script src="scripts/register/register.controller.js"></script>
+    <script src="scripts/register/register.route.js"></script>
+
+    <script src="scripts/reservation/reservation-add-modal.controller.js"></script>
+    <script src="scripts/reservation/reservation-cancel-modal.controller.js"></script>
+    <script src="scripts/reservation/reservation-edit-modal.controller.js"></script>
+    <script src="scripts/reservation/reservation.service.js"></script>
+
+    <script src="scripts/room/room-add-modal.controller.js"></script>
+    <script src="scripts/room/room-edit-modal.controller.js"></script>
+    <script src="scripts/room/room-mark-as-not-usable-modal.controller.js"></script>
+    <script src="scripts/room/room-mark-as-usable-modal.controller.js"></script>
+    <script src="scripts/room/room.route.js"></script>
+    <script src="scripts/room/room.service.js"></script>
+    
+    <script src="scripts/user/user-grant-admin-rights-modal.controller.js"></script>
+    <script src="scripts/user/user-list.controller.js"></script>
+    <script src="scripts/user/user.route.js"></script>
+    <script src="scripts/user/user.service.js"></script>
+
+    <script src="scripts/util/base64.service.js"></script>
+    <script src="scripts/util/date.js"></script>
+    <!-- endbuild -->
 </body>
 </html>
