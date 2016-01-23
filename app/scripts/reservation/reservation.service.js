@@ -80,7 +80,7 @@
             var i = 0;
             for( var key in data ){
                 for( var value in data[key] ){
-                    data[key][value].title = 'Reservation for room ' + data[key][value].roomName;
+                    data[key][value].title = 'Reservation for room ' + data[key][value].roomName + ' by ' + data[key][value].userFirstName + ' ' + data[key][value].userLastName;
                     data[key][value].start = moment( dateResolveUtil.convertToDate( data[key][value].startDate ) );
                     data[key][value].end = moment( dateResolveUtil.convertToDate( data[key][value].endDate ) );
                     data[key][value].color = colorTable[i].color;
