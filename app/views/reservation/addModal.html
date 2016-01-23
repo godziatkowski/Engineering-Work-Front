@@ -1,0 +1,65 @@
+<div class="modal-header">
+    <h3 class="modal-title">
+        Reserve room in {{building.name}} 
+    </h3>
+</div>
+<div class="modal-body">
+    <form class="form-horizontal" role="form" name="reservationAddForm">
+        <div class="row row-form">
+            <div class="col-xs-3 control-label">
+                Room
+            </div>
+            <div class="col-xs-4">
+                <select id="reservation-add-select-room" class="form-control" ng-model="selectedRoom" ng-options="room.name for room in rooms" ng-change="validateForm()">
+                    <option value="">Choose room</option>
+                </select>
+            </div>
+        </div>
+        <div class="row row-eq-height">
+            <div class="col-xs-3 control-label row-date-time-pick">
+                Resevation start
+            </div>
+            <div class="col-xs-4 row-date-time-pick">
+                <p class="input-group">
+                    <input type="text" class="form-control" uib-datepicker-popup ng-model="startDate" ng-change="validateForm()" is-open="startDatePickerOpen" min-date="today" ng-required="true" close-text="Close" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="openStartDatePicker()"><i class="fa fa-calendar"></i></button>
+                    </span>
+                </p>
+            </div>
+            <div class="col-xs-4">
+                <uib-timepicker ng-model="startTime" ng-change="validateForm()" hour-step="1" minute-step="5" show-meridian="ismeridian"></uib-timepicker>
+            </div>            
+        </div>
+        <div class="row row-eq-height">
+            <div class="col-xs-3 control-label row-date-time-pick">
+                Resevation end
+            </div>
+            <div class="col-xs-4 row-date-time-pick">
+                <p class="input-group">
+                    <input type="text" class="form-control" uib-datepicker-popup ng-model="endDate" ng-change="validateForm()" is-open="endDatePickerOpen" min-date="today" ng-required="true" close-text="Close" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="openEndDatePicker()"><i class="fa fa-calendar"></i></button>
+                    </span>
+                </p>
+            </div>
+            <div class="col-xs-4">
+                <uib-timepicker ng-model="endTime" ng-change="validateForm()" hour-step="1" minute-step="5" show-meridian="ismeridian"></uib-timepicker>
+            </div>
+        </div>
+        <div class="row row-form">
+            <div class="col-xs-9 col-xs-offset-3 text-danger" ng-if="incorrectDates">
+                Reservation start must be before it's end.
+            </div> 
+        </div> 
+    </form>
+</div>
+
+<div class="modal-footer">
+    <button id="accout-edit-modal-button-save" class="btn btn-success" type="submit" ng-click="save();" ng-disabled="!formIsCorrect">
+        <i class="fa fa-save"></i> Reserve
+    </button>
+    <button id="accout-edit-modal-button-cancel" class="btn btn-danger" type="button" ng-click="$dismiss()">
+        <i class="fa fa-times"></i> Cancel
+    </button>
+</div>

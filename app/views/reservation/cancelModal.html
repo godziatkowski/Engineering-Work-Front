@@ -1,0 +1,14 @@
+<div class="modal-header">
+    <h3 class="text-center">Cancel reservation</h3>
+</div>
+<div class="modal-body">
+    Are you sure you want to cancel {{reservation.title}}?
+</div>
+<div class="modal-footer">
+    <button id="reservation-cancel-modal-button-confirm" class="btn btn-success" type="submit" ng-click="confirm();">
+        <i class="fa fa-check"></i> Confirm
+    </button>
+    <button id="reservation-cancel-modal-button-cancel" class="btn btn-danger" type="button" ng-click="$dismiss()">
+        <i class="fa fa-times"></i> Cancel
+    </button>
+</div>
