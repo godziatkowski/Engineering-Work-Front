@@ -1,0 +1,12 @@
+<h3>
+    My Calendar
+</h3>
+
+<h4 class="text-center" ng-if="!myReservations.length">
+    There aren't any reservations in next week
+</h4>
+<div class="panel">
+    <div class="panel-body">
+        <div ui-calendar="calendar.config.myReservationsCalendar" ng-model="myReservations" calendar="myReservationsCalendar"></div>
+    </div>
+</div>
