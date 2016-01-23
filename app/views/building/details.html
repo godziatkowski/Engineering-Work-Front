@@ -1,0 +1,88 @@
+<h3>
+    {{building.name}} building
+</h3>
+<div class="row">
+    <div class="col-xs-4">
+        <div class="row">
+            <div class="col-xs-4"><label>Name</label></div>
+            <div class="col-xs-8">{{::building.name}}</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4"><label>Address</label></div>
+            <div class="col-xs-8">{{::building.address}}</div>          
+        </div>
+        <div class="row">
+            <div class="col-xs-4"><label>City</label></div>
+            <div class="col-xs-8">{{::building.city}}</div>         
+        </div>
+        <div class="row">
+            <div class="col-xs-4"><label>Is usable</label></div>
+            <div class="col-xs-8"><i class="fa fa-2x" ng-class="{'fa-check text-success': building.usable, 'fa-times text-danged': !building.usable}"></i></div>
+        </div>
+    </div>
+    <div class="col-xs-2 col-xs-offset-6 row-form">
+        <a ui-sref="building.calendar ({id: building.id})" class="btn btn-info btn-block pull-right"><i class="fa fa-calendar"> Calendar</i></a>
+    </div>
+    <div class="col-xs-2 col-xs-offset-6 row-form" has-authority="ADMIN">
+        <button class="btn btn-primary btn-block pull-right" type="button" ng-click="openEditBuildingModal()"> <i class="fa fa-pencil"></i>  Edit building</button>
+    </div>
+    <div class="col-xs-2 col-xs-offset-6" has-authority="ADMIN">
+        <button class="btn btn-success btn-block pull-right" type="button" ng-click="openAddRoomModal()"> <i class="fa fa-plus-circle"></i>  Add room</button>
+    </div>
+
+</div>
+<h3>
+    Rooms in building
+</h3>
+<div class="row" ng-if="!rooms.length">   
+    <div class="col-xs-6 col-xs-offset-3 alert alert-warning text-center" >
+        There aren't any defined rooms in this building.
+    </div>
+</div>
+
+<div ng-if="rooms.length">
+    <div class="row row-header-top-with-bottom">
+        <div class="col-xs-2">Name</div>
+        <div class="col-xs-1 text-center">Type</div>
+        <div class="col-xs-1 text-center">Floor</div>
+        <div class="col-xs-1 text-center">Count of seats</div>
+        <div class="col-xs-2 text-center">Count of computer stations</div>
+        <div class="col-xs-1 text-center">Projector</div>
+        <div class="col-xs-1 text-center">Blackboard</div>
+        <div class="col-xs-1 text-center">Usable</div>
+        <div class="col-xs-2 text-center">Manage</div>
+    </div>
+    <div class="row row-custom" ng-repeat="room in rooms">
+        <div class="col-xs-2">
+            <a ui-sref="room.reservations({id: {{room.id}}})">
+                {{room.name}}
+            </a>
+        </div>
+        <div class="col-xs-1 text-center">
+            <div ng-switch="room.roomType">
+                <span ng-switch-when="LECTURE_HALL">Lecture hall</span>
+                <span ng-switch-when="LABORATORY">Laboratory</span>
+            </div>
+        </div>
+        <div class="col-xs-1 text-center">{{room.floor}}</div>
+        <div class="col-xs-1 text-center">{{room.seatsCount}}</div>
+        <div class="col-xs-2 text-center">{{room.computerStationsCount}}</div>
+        <div class="col-xs-1 text-center"><i class="fa" ng-class="{'fa-check text-success': room.hasProjector, 'fa-times text-danger': !room.hasProjector}"></i></div>
+        <div class="col-xs-1 text-center"><i class="fa" ng-class="{'fa-check text-success': room.hasBlackboard, 'fa-times text-danger': !room.hasBlackboard}"></i></div>
+        <div class="col-xs-1 text-center"><i class="fa" ng-class="{'fa-check text-success': room.isUsable, 'fa-times text-danger': !room.isUsable}"></i></div>
+        <div class="col-xs-2 text-center" has-authority="ADMIN">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-2x fa-cog"></i>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="" ng-click="openEditRoomModal( room )"><i class="fa fa-pencil"></i> Edit</a></li>
+                <li>
+                    <a href="" ng-click="changeRoomUsability( room )">
+                        <i class="fa fa-power-off"></i> 
+                        <span ng-if="room.isUsable">Mark as not usable</span>
+                        <span ng-if="!room.isUsable">Mark as usable</span>
+                    </a>
+                </li>
+            </ul></div>
+    </div>
+</div>

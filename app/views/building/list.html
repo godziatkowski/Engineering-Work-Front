@@ -1,0 +1,49 @@
+<div class="row row-eq-height">
+    <div class="col-xs-4">
+        <h3>
+            Buildings
+        </h3>        
+    </div>
+    <div class="col-xs-4 col-xs-offset-4" has-authority="ADMIN">
+        <button id="building-list-button-add" class="btn btn-success btn-lg pull-right" type="button" ng-click="openAddModal()">
+            <i class="fa fa-plus-circle"></i>
+            Add building
+        </button>
+    </div>
+</div>
+<div class="row row-header-top-with-bottom">
+    <div class="col-xs-2">Name</div>
+    <div class="col-xs-3">Address</div>
+    <div class="col-xs-2">City</div>
+    <div class="col-xs-2 text-center">Usablility</div>
+    <div class="text-center" ng-class="{'col-xs-2': isAdmin, 'col-xs-3': !isAdmin}" >Calendar</div>    
+    <div class="col-xs-1 text-center" has-authority="ADMIN">Manage</div>
+</div>
+<div class="row row-custom" ng-repeat="building in buildings | orderBy: 'name'">
+    <div class="col-xs-2">
+        <a ui-sref="building.details ({id: building.id})">
+            {{building.name}}
+        </a>
+    </div>
+    <div class="col-xs-3">{{building.address}}</div>
+    <div class="col-xs-2">{{building.city}}</div>
+    <div class="col-xs-2 text-center"><i ng-class="{'fa fa-check text-success': building.usable, 'fa fa-times text-danger': !building.usable}"></i></div>    
+    <div class="text-center" ng-class="{'col-xs-2': isAdmin, 'col-xs-3': !isAdmin}">        
+        <a ui-sref="building.calendar ({id: building.id})" class="btn btn-info"><i class="fa fa-calendar"> Calendar</i></a>
+    </div>
+    <div class="col-xs-1 text-center" has-authority="ADMIN">
+        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-2x fa-cog"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-right">
+            <li><a href="" ng-click="openEditModal( building )"><i class="fa fa-pencil"></i> Edit</a></li>
+            <li>
+                <a href="" ng-click="changeUsability( building )">
+                    <i class="fa fa-power-off"></i> 
+                    <span ng-if="building.usable">Mark as not usable</span>
+                    <span ng-if="!building.usable">Mark as usable</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

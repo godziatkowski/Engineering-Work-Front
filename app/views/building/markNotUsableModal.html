@@ -1,0 +1,25 @@
+<div class="modal-header">
+    Mark building {{building.name}} as not usable
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-xs-12">
+            Are you sure you want to mark building "{{building.name}}" as not usable?
+        </div>
+    </div>
+    <div class="alert alert-warning">
+        <div class="row">
+            <div class="col-xs-1">
+                <i class="fa fa-2x fa-exclamation-triangle"></i> 
+            </div>
+            <div class="col-xs-11">
+                Marking building as not usable will mark all rooms in it as not usable.<br/>
+                Therefore it will prevent from reserving those rooms.
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button id="room-mark-as-usable-button-confirm" class="btn btn-success" type="submit" ng-click="confirm()"> Yes</button>
+    <button id="room-mark-as-usable-button-cancel" class="btn btn-danger" type="reset" ng-click="$dismiss()"> No</button>
+</div>

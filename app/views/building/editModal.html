@@ -1,0 +1,56 @@
+<div class="modal-header">
+    <h3>
+        Edit building {{name}}
+    </h3>
+</div>
+<div class="modal-body">
+    <form class="form-horizontal" role="form" name="buildingEditForm">
+        <div class="row row-form">
+            <div class="col-xs-4 control-label">
+                <label for="edit-building-modal-input-name">Name</label>
+            </div>
+            <div class="col-xs-8">
+                <input id="edit-building-modal-input-name" class="form-control" name="name" type="text" placeholder="Name" required="true"
+                       ng-maxlength="{{constraints.maxName}}" ng-minlength="{{constraints.minName}}" ng-model="building.name"/>
+                <p class="error text-danger" ng-show="buildingEditForm.name.$dirty && buildingEditForm.name.$error.minlength">Name for building is too short. Minimal accpetable length is {{constraints.minName}} characters</p>
+                <p class="error text-danger" ng-show="buildingEditForm.name.$dirty && buildingEditForm.name.$error.maxlength">Name for building is too long. Maximum acceptable length is {{constraints.maxName}} characters</p>
+                <p class="error text-danger" ng-show="buildingEditForm.name.$dirty && buildingEditForm.name.$error.required">Name for building is required.</p>
+                <p class="error text-danger" ng-show="buildingEditForm.name.$dirty && (errorsOnFields.indexOf('name') !== -1)">Building with name {{building.name}} already exist at {{building.address}} in {{building.city}}</p>
+            </div>
+        </div>
+        <div class="row row-form">
+            <div class="col-xs-4 control-label">
+                <label for="edit-building-modal-input-address">Address</label>
+            </div>
+            <div class="col-xs-8">
+                <input id="edit-building-modal-input-address" class="form-control" name="address" type="text" placeholder="Address" required="true"
+                       ng-maxlength="{{constraints.maxAddress}}" ng-minlength="{{constraints.minAddress}}" ng-model="building.address"/>
+                <p class="error text-danger" ng-show="buildingEditForm.address.$dirty && buildingEditForm.address.$error.minlength">Address for building is too short. Minimal accpetable length is {{constraints.minAddress}} characters</p>
+                <p class="error text-danger" ng-show="buildingEditForm.address.$dirty && buildingEditForm.address.$error.maxlength">Address for building is too long. Maximum acceptable length is {{constraints.maxAddress}} characters</p>
+                <p class="error text-danger" ng-show="buildingEditForm.address.$dirty && buildingEditForm.address.$error.required">Address for building is required.</p>
+            </div>
+        </div>
+        <div class="row row-form">
+            <div class="col-xs-4 control-label">
+                <label for="edit-building-modal-input-city">City</label>
+            </div>
+            <div class="col-xs-8">
+                <input id="edit-building-modal-input-city" class="form-control" name="city" type="text" placeholder="City" required="true"
+                       ng-maxlength="{{constraints.maxCity}}" ng-minlength="{{constraints.minCity}}" ng-model="building.city"/>
+                <p class="error text-danger" ng-show="buildingEditForm.city.$dirty && buildingEditForm.city.$error.minlength">City for building is too short. Minimal accpetable length is {{constraints.minCity}} characters</p>
+                <p class="error text-danger" ng-show="buildingEditForm.city.$dirty && buildingEditForm.city.$error.maxlength">City for building is too long. Maximum acceptable length is {{constraints.maxCity}} characters</p>
+                <p class="error text-danger" ng-show="buildingEditForm.city.$dirty && buildingEditForm.city.$error.required">City for building is required.</p>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button id="edit-building-modal-button-room-submit" type="submit" class="btn btn-success" ng-click="edit()" ng-disabled="buildingEditForm.$invalid">
+        <i class="fa fa-save"></i>
+        Save
+    </button>
+    <button id="edit-building-modal-button-room-submit" type="submit" class="btn" ng-click="$dismiss()">
+        <i class="fa fa-times"></i>
+        Cancel
+    </button>
+</div>
