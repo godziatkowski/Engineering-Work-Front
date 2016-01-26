@@ -5,13 +5,17 @@
             .module( 'roomBookingApp' )
             .controller( 'ReservationEditModalCtrl', ReservationEditModalCtrl );
 
-    ReservationEditModalCtrl.$inject = [ '$scope', '$uibModalInstance', 'building', 'rooms', 'reservation', 'toaster', 'Reservation' ];
+    ReservationEditModalCtrl.$inject = [ '$scope', '$uibModalInstance', 'rooms', 'reservation', 'toaster', 'Reservation' ];
 
-    function ReservationEditModalCtrl( $scope, $uibModalInstance, building, rooms, reservation, toaster, Reservation ){
-        $scope.building = building;
-        $scope.rooms = rooms;
+    function ReservationEditModalCtrl( $scope, $uibModalInstance, rooms, reservation, toaster, Reservation ){
+        $scope.tab = 'EDIT';
+        if(rooms){
+            $scope.rooms = rooms;
+        }
         $scope.today = moment();
         $scope.reservation = reservation;
+        $scope.start = reservation.start.format( 'YYYY-MM-DD H:mm' );
+        $scope.end = reservation.end.format( 'YYYY-MM-DD H:mm' );
         $scope.startDate = reservation.start.format( 'YYYY-MM-DD' );
         $scope.endDate = reservation.end.format( 'YYYY-MM-DD' );
         $scope.startTime = reservation.start.toDate();
@@ -63,22 +67,28 @@
         }
         function save(){
             var reservation = new Reservation();
-            var start = concatTimeWithDate( $scope.startDate, $scope.startTime );
-            var end = concatTimeWithDate( $scope.endDate, $scope.endTime );
-            reservation.id = $scope.reservation.id;
-            reservation.roomId = $scope.selectedRoom.id;
-            reservation.startDate = start.toDate();
-            reservation.endDate = end.toDate();
-            reservation.$edit().then( function(){
-                reservation.room = $scope.selectedRoom;
-                $uibModalInstance.close( reservation );
-            }, function( reason ){
-                if(reason.data.fieldErrors[0].message){
-                toaster.pop( 'error', reason.data.fieldErrors[0].message );
-            }else{
-                toaster.pop( 'error', 'Some error occured' );
+            if($scope.tab === 'EDIT'){
+                var start = concatTimeWithDate( $scope.startDate, $scope.startTime );
+                var end = concatTimeWithDate( $scope.endDate, $scope.endTime );
+                reservation.id = $scope.reservation.id;
+                reservation.roomId = $scope.selectedRoom.id;
+                reservation.startDate = start.toDate();
+                reservation.endDate = end.toDate();
+                reservation.$edit().then( function(){
+                    reservation.room = $scope.selectedRoom;
+                    $uibModalInstance.close( reservation );
+                }, function( reason ){
+                    if(reason.data.fieldErrors[0].message){
+                        toaster.pop( 'error', reason.data.fieldErrors[0].message );
+                    } else{
+                        toaster.pop( 'error', 'Some error occured' );
+                    }
+                } );
+            } else{
+                reservation.$cancel( { id: $scope.reservation.id } ).then( function(){
+                    $uibModalInstance.close();
+                } );
             }
-            } );
         }
 
         function findRoom(){

@@ -5,9 +5,9 @@
             .module( 'roomBookingApp' )
             .controller( 'DashboardCtrl', DashboardCtrl );
 
-    DashboardCtrl.$inject = [ '$scope', '$uibModal', 'myReservations', 'Reservation' ];
+    DashboardCtrl.$inject = [ '$scope', '$uibModal', 'myReservations', 'Reservation', 'toaster' ];
 
-    function DashboardCtrl( $scope, $uibModal, myReservations, Reservation ){
+    function DashboardCtrl( $scope, $uibModal, myReservations, Reservation, toaster ){
         $scope.myReservations = [ ];
         $scope.myReservations.push( myReservations );
         $scope.calendar = { };
@@ -16,7 +16,7 @@
                 allDaySlot: false,
                 defaultView: 'agendaWeek',
                 editable: false,
-                eventClick: openCancelReservationModal,
+                eventClick: openEditReservationModal,
                 slotEventOverlap: false,
                 header: {
                     left: 'title',
@@ -29,24 +29,34 @@
             }
         };
 
-        function openCancelReservationModal( event ){
+        function openEditReservationModal( event ){
             var modal = $uibModal.open( {
-                templateUrl: '/views/reservation/cancelModal.html',
-                controller: 'ReservationCancelModalCtrl',
-                size: 'sm',
+                controller: 'ReservationEditModalCtrl',
+                size: 'md',
+                templateUrl: '/views/reservation/EditModal.html',
                 resolve: {
+                    rooms: function(){
+                        return null;
+                    },
                     reservation: function(){
                         return event;
                     }
                 }
             } );
 
-            modal.result.then( function(){
-                Reservation.myReservation( ).$promise.then( function( result ){
-                    $scope.myReservations.splice( 0, $scope.myReservations.length );
-                    $scope.myReservations.push( result );
-                } )
-
+            modal.result.then( function( result ){
+                if(result){
+                    toaster.pop( 'success', 'Reservation edited' );
+                } else{
+                    toaster.pop( 'success', 'Reservation canceled' );
+                }
+                reloadReservations();
+            } );
+        }
+        function reloadReservations(){
+            Reservation.myReservation( ).$promise.then( function( result ){
+                $scope.myReservations.splice( 0, $scope.myReservations.length );
+                $scope.myReservations.push( result );
             } );
         }
 

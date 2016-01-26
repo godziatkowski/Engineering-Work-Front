@@ -74,9 +74,6 @@
                     size: 'md',
                     templateUrl: '/views/reservation/EditModal.html',
                     resolve: {
-                        building: function(){
-                            return $scope.building;
-                        },
                         rooms: [ 'Room', function( Room ){
                                 return Room.roomsInBuilding( { buildingId: $scope.building.id } ).$promise;
                             } ],
@@ -87,7 +84,11 @@
                 } );
 
                 modal.result.then( function( result ){
-                    toaster.pop( 'success', 'Reservation edited' );
+                    if(result){
+                        toaster.pop( 'success', 'Reservation edited' );
+                    }else{
+                        toaster.pop( 'success', 'Reservation canceled');
+                    }
                     reloadReservations();
                 } );
             }

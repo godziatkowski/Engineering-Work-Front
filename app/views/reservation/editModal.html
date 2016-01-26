@@ -1,65 +1,92 @@
 <div class="modal-header">
     <h3 class="modal-title">
-        Reserve room in {{building.name}} 
+        Reservation for room {{reservation.roomName}}
     </h3>
+    <ul class="nav nav-tabs nav-justified">
+        <li role="presentation" class="clickable text-center" ng-class="{'active': tab === 'EDIT'}">
+            <a href="" ng-click="tab = 'EDIT'">                        
+                Edit reservation
+            </a>
+        </li>
+        <li role="presentation"class="clickable text-center"  ng-class="{'active': tab === 'CANCEL'}">
+            <a href="" ng-click="tab = 'CANCEL'">                        
+                Cancel reservation
+            </a>
+        </li>
+    </ul>
 </div>
 <div class="modal-body">
-    <form class="form-horizontal" role="form" name="reservationAddForm">
-        <div class="row row-form">
-            <div class="col-xs-3 control-label">
-                Room
+    <div ng-show="tab === 'EDIT'">
+        <form class="form-horizontal" role="form" name="reservationAddForm">
+            <div class="row row-form">
+                <div class="col-xs-3 control-label">
+                    Room
+                </div>
+                <div class="col-xs-4">
+                    <select id="reservation-add-select-room" class="form-control" ng-model="selectedRoom" ng-options="room.name for room in rooms" ng-change="validateForm()">
+                        <option value="">Choose room</option>
+                    </select>
+                </div>
             </div>
-            <div class="col-xs-4">
-                <select id="reservation-add-select-room" class="form-control" ng-model="selectedRoom" ng-options="room.name for room in rooms" ng-change="validateForm()">
-                    <option value="">Choose room</option>
-                </select>
+            <div class="row row-eq-height">
+                <div class="col-xs-3 control-label row-date-time-pick">
+                    Resevation start
+                </div>
+                <div class="col-xs-4 row-date-time-pick">
+                    <p class="input-group">
+                        <input type="text" class="form-control" uib-datepicker-popup ng-model="startDate" ng-change="validateForm()" is-open="startDatePickerOpen" min-date="today" ng-required="true" close-text="Close" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="openStartDatePicker()"><i class="fa fa-calendar"></i></button>
+                        </span>
+                    </p>
+                </div>
+                <div class="col-xs-4">
+                    <uib-timepicker ng-model="startTime" ng-change="validateForm()" hour-step="1" minute-step="5" show-meridian="ismeridian"></uib-timepicker>
+                </div>            
             </div>
-        </div>
-        <div class="row row-eq-height">
-            <div class="col-xs-3 control-label row-date-time-pick">
-                Resevation start
+            <div class="row row-eq-height">
+                <div class="col-xs-3 control-label row-date-time-pick">
+                    Resevation end
+                </div>
+                <div class="col-xs-4 row-date-time-pick">
+                    <p class="input-group">
+                        <input type="text" class="form-control" uib-datepicker-popup ng-model="endDate" ng-change="validateForm()" is-open="endDatePickerOpen" min-date="today" ng-required="true" close-text="Close" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="openEndDatePicker()"><i class="fa fa-calendar"></i></button>
+                        </span>
+                    </p>
+                </div>
+                <div class="col-xs-4">
+                    <uib-timepicker ng-model="endTime" ng-change="validateForm()" hour-step="1" minute-step="5" show-meridian="ismeridian"></uib-timepicker>
+                </div>
             </div>
-            <div class="col-xs-4 row-date-time-pick">
-                <p class="input-group">
-                    <input type="text" class="form-control" uib-datepicker-popup ng-model="startDate" ng-change="validateForm()" is-open="startDatePickerOpen" min-date="today" ng-required="true" close-text="Close" />
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-default" ng-click="openStartDatePicker()"><i class="fa fa-calendar"></i></button>
-                    </span>
-                </p>
-            </div>
-            <div class="col-xs-4">
-                <uib-timepicker ng-model="startTime" ng-change="validateForm()" hour-step="1" minute-step="5" show-meridian="ismeridian"></uib-timepicker>
-            </div>            
-        </div>
-        <div class="row row-eq-height">
-            <div class="col-xs-3 control-label row-date-time-pick">
-                Resevation end
-            </div>
-            <div class="col-xs-4 row-date-time-pick">
-                <p class="input-group">
-                    <input type="text" class="form-control" uib-datepicker-popup ng-model="endDate" ng-change="validateForm()" is-open="endDatePickerOpen" min-date="today" ng-required="true" close-text="Close" />
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-default" ng-click="openEndDatePicker()"><i class="fa fa-calendar"></i></button>
-                    </span>
-                </p>
-            </div>
-            <div class="col-xs-4">
-                <uib-timepicker ng-model="endTime" ng-change="validateForm()" hour-step="1" minute-step="5" show-meridian="ismeridian"></uib-timepicker>
-            </div>
-        </div>
-        <div class="row row-form">
-            <div class="col-xs-9 col-xs-offset-3 text-danger" ng-if="incorrectDates">
-                Reservation start must be before it's end.
+            <div class="row row-form">
+                <div class="col-xs-9 col-xs-offset-3 text-danger" ng-if="incorrectDates">
+                    Reservation start must be before it's end.
+                </div> 
             </div> 
-        </div> 
-    </form>
-</div>
+        </form>
+    </div>
+    <div ng-show="tab === 'CANCEL'">
+        <div class="alert alert-warning">
+            <div class="row">
+                <div class="col-xs-12">
+                    Are you sure you want to cancel your reservation for room {{reservation.roomName}} starting at {{start}} and ending at {{end}}?
+                </div>
+                <div class="col-xs-12 text-center">
+                    <i class="fa fa-exclamation-triangle"></i>This action cannot be undone!
+                </div>
+            </div>
+        </div>
+    </div>
+</div>        
 
 <div class="modal-footer">
     <button id="accout-edit-modal-button-save" class="btn btn-success" type="submit" ng-click="save();" ng-disabled="!formIsCorrect">
-        <i class="fa fa-save"></i> Reserve
+        <span ng-show="tab === 'EDIT'"><i class="fa fa-save"></i> Reserve</span>
+        <span ng-show="tab === 'CANCEL'" ><i class="fa fa-check"></i> Yes</span>
     </button>
     <button id="accout-edit-modal-button-cancel" class="btn btn-danger" type="button" ng-click="$dismiss()">
-        <i class="fa fa-times"></i> Cancel
+        <i class="fa fa-times"></i> <span ng-show="tab === 'EDIT'">Cancel</span><span ng-show="tab === 'CANCEL'">No</span>
     </button>
 </div>
