@@ -33,7 +33,6 @@
                 select: openReservationModal,
                 selectable: true,
                 selectHelper: true,
-                selectOverlap: false,
                 slotLabelFormat: 'H:mm',
                 timeFormat: 'DD MMM H:mm'
             }
