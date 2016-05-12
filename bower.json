@@ -2,22 +2,27 @@
   "name": "roomBookingApp",
   "version": "0.0.0",
   "dependencies": {
-    "angular": "^1.3.0",
     "angular-animate": "~1.4.7",
-    "angular-bootstrap": "~0.14.2",
+    "angular-loading-bar": "~0.8.0",
     "angular-cookies": "^1.3.0",
     "angular-resource": "^1.3.0",
+    "angular-mocks": "^1.4.0",
+    "angular-local-storage": "~0.2.3",
+    "angular-route": "^1.4.0",
+    "angular-touch": "^1.4.0",
+    "angular-sanitize": "^1.4.0",
+    "angular-ui-calendar": "~1.0.1",
     "angular-ui-router": "~0.2.15",
     "AngularJS-Toaster": "angularjs-toaster#~0.4.15",
+    "bootstrap-material-design": "~0.3.0",
     "bootstrap-sass-official": "^3.2.0",
-    "components-font-awesome": "~4.4.0",
-    "angular-local-storage": "~0.2.3",
-    "angular-loading-bar": "~0.8.0",
-    "ng-sortable": "~1.3.1",
+    "bootstrap": "~3.3.6",
+    "clockpicker": "~0.0.7",
+    "fullcalendar-scheduler": "~1.2.0",
     "ng-file-upload": "~10.1.9",
-    "moment": "~2.11.1",
-    "angular-ui-calendar": "~1.0.1",
-    "clockpicker": "~0.0.7"
+    "ng-sortable": "~1.3.1",
+    "components-font-awesome": "~4.4.0",
+    "angular-bootstrap": "~0.14.2"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"
@@ -34,6 +39,7 @@
     }
   },
   "resolutions": {
-    "fullcalendar": ">=2.5.0"
+    "fullcalendar": ">=2.5.0",
+    "angular": "1.5.5"
   }
 }
