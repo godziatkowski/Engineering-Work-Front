@@ -1,0 +1,14 @@
+{
+    "navbar": {
+        "label": {
+            "accountData": "Account Data",
+            "buildings": "Buildings",
+            "logout": "Logout",
+            "users": "Users"
+        },
+        "language": {
+            "english": "English",
+            "polish": "Polish"
+        }
+    }
+}

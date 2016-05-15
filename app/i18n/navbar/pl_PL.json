@@ -1,0 +1,14 @@
+{
+    "navbar": {
+        "label": {
+            "accountData": "Profil",
+            "buildings": "Budynki",
+            "logout": "Wyloguj",
+            "users": "Użytkownicy"
+        },
+        "language": {
+            "english": "Angielski",
+            "polish": "Polski"
+        }
+    }
+}

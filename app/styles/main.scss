@@ -2,9 +2,116 @@
 @import "components-font-awesome/scss/font-awesome.scss";
 // endbower
 
+/* FLAGS */
+.flag {
+   width: 16px;
+   height: 11px;
+   background:url(../img/flags.png) no-repeat;
+}
+
+.flag.flag-cn {background-position: -16px 0}
+.flag.flag-de {background-position: -32px 0}
+.flag.flag-es {background-position: -48px 0}
+.flag.flag-fr {background-position: 0 -11px}
+.flag.flag-gb {background-position: -16px -11px}
+.flag.flag-it {background-position: -32px -11px}
+.flag.flag-jp {background-position: -48px -11px}
+.flag.flag-kr {background-position: 0 -22px}
+.flag.flag-pl {background-position: -16px -22px}
+.flag.flag-ru {background-position: -32px -22px}
+.flag.flag-se {background-position: -48px -22px}
+.flag.flag-tr {background-position: 0 -33px}
+
+.flag.lang-de {background-position: -32px 0}
+.flag.lang-en {background-position: -16px -11px}
+.flag.lang-es {background-position: -48px 0}
+.flag.lang-fr {background-position: 0 -11px}
+.flag.lang-it {background-position: -32px -11px}
+.flag.lang-ja {background-position: -48px -11px}
+.flag.lang-ko {background-position: 0 -22px}
+.flag.lang-pl {background-position: -16px -22px}
+.flag.lang-ru {background-position: -32px -22px}
+.flag.lang-sv {background-position: -48px -22px}
+.flag.lang-tr {background-position: 0 -33px}
+.flag.lang-zh {background-position: -16px 0}
+
+
+/* SHARED */
+body {
+    margin: 0px;
+    padding: 0px;
+}
+.no-list-style{
+    list-style: none;
+}
+.row-custom {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: solid 1px;
+    border-bottom-color: #cdc9c9;
+    min-height: 4vh;
+}
+
+.row-header-top {
+    border-top: solid 1px;
+    border-top-color: #cdc9c9;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 3vh;
+    background-color: #F5F5F5;
+    padding: 10px 0;
+}
+.row-header-bottom {
+    border-bottom: solid 2px;
+    border-bottom-color: #cdc9c9;
+    background-color: #F5F5F5;
+}
+.row-header-top-with-bottom{
+    border-bottom: solid 2px;
+    border-bottom-color: #cdc9c9;
+    background-color: #F5F5F5;
+    border-top: solid 1px;
+    border-top-color: #cdc9c9;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 10px 0px;
+    line-height: 3vh;
+}
+.label-muted {
+    color: #fff !important;
+    background-color: #777;
+}
+.btn-muted {
+    color: #fff !important;
+    background-color: #999;
+}
+.btn-muted:hover {
+    color: #fff !important;
+    background-color: #777;
+}
+.row-form{
+    padding-bottom: 4px;
+}
+.row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+}
+.row-date-time-pick{
+    margin-top: 33px;
+}
+.clickable{
+    cursor: pointer;
+}
+
+/* NAVBAR */
 .navbar {
     border-radius: 0px !important;
 }
+
+/* LOGIN PAGE */
 .form-signin
 {
     max-width: 330px;
@@ -80,77 +187,7 @@
     display: block;
     margin-top: 10px;
 }
-body {
-    margin: 0px;
-    padding: 0px;
-}
-.no-list-style{
-    list-style: none;
-}
-.row-custom {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-bottom: solid 1px;
-    border-bottom-color: #cdc9c9;
-    min-height: 4vh;
-}
 
-.row-header-top {
-    border-top: solid 1px;
-    border-top-color: #cdc9c9;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 3vh;
-    background-color: #F5F5F5;
-    padding: 10px 0;
-}
-.row-header-bottom {
-    border-bottom: solid 2px;
-    border-bottom-color: #cdc9c9;
-    background-color: #F5F5F5;
-}
-.row-header-top-with-bottom{
-    border-bottom: solid 2px;
-    border-bottom-color: #cdc9c9;
-    background-color: #F5F5F5;
-    border-top: solid 1px;
-    border-top-color: #cdc9c9;
-    font-weight: bold;
-    font-size: 14px;
-    margin-top: 10px;
-    padding: 10px 0px;
-    line-height: 3vh;
-}
-.label-muted {
-    color: #fff !important;
-    background-color: #777;
-}
-.btn-muted {
-    color: #fff !important;
-    background-color: #999;
-}
-.btn-muted:hover {
-    color: #fff !important;
-    background-color: #777;
-}
-.row-form{
-    padding-bottom: 4px;
-}
-.row-eq-height {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display:         flex;
-}
 #building-list-button-add{
     margin-top: 10px;
-}
-.row-date-time-pick{
-    margin-top: 33px;
-}
-.clickable{
-    cursor: pointer;
-}
-.fc-bg{
-    cursor: pointer;
 }

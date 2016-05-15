@@ -8,6 +8,7 @@
                 'ngCookies',
                 'ngResource',
                 'LocalStorageModule',
+                'pascalprecht.translate',
                 'ui.router',
                 'ui.bootstrap',
                 'ui.calendar',

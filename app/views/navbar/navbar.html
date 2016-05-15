@@ -5,18 +5,61 @@
             <span ng-if="identity !== null">                
                 <a class="navbar-brand" ui-sref="building.list">
                     <i class="fa fa-building"></i>
-                    Buildings
+                    <span translate-once="navbar.label.buildings">Buildings</span>
                 </a>                
             </span>
             <span ng-if="identity !== null">                
                 <a class="navbar-brand" ui-sref="user.list" has-authority="ADMIN">
                     <i class="fa fa-users"></i>
-                    Users
+                    <span translate-once="navbar.label.users">Users</span>
                 </a>
             </span>
         </div>
 
         <ul class="nav navbar-nav navbar-right" ng-if="identity !== null">
+            <li class="dropdown">
+                <a id="navbar-dropdown-language"
+                   href=""
+                   class="dropdown-toggle"
+                   data-toggle="dropdown"
+                   role="button"
+                   aria-haspopup="true"
+                   aria-expanded="false">
+                    <img class="flag lang-pl" alt="PL"
+                         ng-src="img/blank.gif"
+                         ng-if="activeLanguage === 'pl_PL'"/>
+                    <span ng-if="activeLanguage === 'pl_PL'"
+                          translate-once="navbar.language.polish">
+                        Polish
+                    </span>
+                    <img class="flag lang-en" alt="EN"
+                         ng-src="img/blank.gif"
+                         ng-if="activeLanguage === 'en_GB'"/>
+                    <span ng-if="activeLanguage === 'en_GB'"
+                          translate-once="navbar.language.english">
+                        English
+                    </span>
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a id="navbar-dropdown-language-option-pl" 
+                           class="clickable" ng-click="changeLanguage( 'pl_PL' )">
+                            <img class="flag lang-pl" alt="PL"
+                                 ng-src="img/blank.gif"/>
+                            <span translate-once="navbar.language.polish">Polish</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="navbar-dropdown-language-option-gb"
+                           class="clickable" ng-click="changeLanguage( 'en_GB' )">
+                            <img class="flag lang-en" alt="EN"
+                                 ng-src="img/blank.gif"/>
+                            <span translate-once="navbar.language.english">English</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
             <li class="dropdown">
                 <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     {{identity.login}}
@@ -25,11 +68,11 @@
                 <ul class="dropdown-menu">
                     <li><a ui-sref="account.details">
                             <i class="fa fa-user"></i>
-                            Acount Data
+                            <span translate-once="navbar.label.accountData">Acount Data</span>
                         </a></li>
                     <li><a href="" ng-click="logout()">
                             <i class="fa fa-sign-out"></i>
-                            Logout
+                            <span translate-once="navbar.label.logout">Logout</span>
                         </a></li>
                 </ul>
             </li>

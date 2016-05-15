@@ -43,6 +43,11 @@ module.exports = function(config) {
       'bower_components/ng-file-upload/ng-file-upload.js',
       'bower_components/ng-sortable/dist/ng-sortable.js',
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+      'bower_components/angular-translate/angular-translate.js',
+      'bower_components/angular-translate-once/src/translate-once.js',
+      'bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js',
+      'bower_components/angular-translate-storage-local/angular-translate-storage-local.js',
+      'bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js',
       // endbower
       "app/scripts/**/*.js",
       "test/mock/**/*.js",
