@@ -25,7 +25,8 @@
                 height: 800,
                 scrollTime: '00:00:00',
                 slotLabelFormat: 'H:mm',
-                timeFormat: 'DD MMM H:mm'
+                timeFormat: 'DD MMM H:mm',
+                schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives'
             }
         };
 

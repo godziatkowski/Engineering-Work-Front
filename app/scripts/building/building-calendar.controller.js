@@ -34,7 +34,8 @@
                 selectable: true,
                 selectHelper: true,
                 slotLabelFormat: 'H:mm',
-                timeFormat: 'DD MMM H:mm'
+                timeFormat: 'DD MMM H:mm',
+                schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives'
             }
         };
 
