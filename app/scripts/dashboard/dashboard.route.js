@@ -17,7 +17,10 @@
             templateUrl: 'views/dashboard/dashboard.html',
             controller: 'DashboardCtrl',
             resolve: {
-                myReservations: resolveMyReservations
+                myReservations: resolveMyReservations,
+                translations: [ 'loadTranslations', function( loadTranslations ){
+                        return loadTranslations( 'dashboard' );
+                    } ]
             }
         } );
 

@@ -1,0 +1,8 @@
+{
+    "dashboard": {
+        "label": {
+            "my-calendar":"My calendar",
+            "no-upcoming-reservations": "There aren't any reservations in next week"
+        }
+    }
+}

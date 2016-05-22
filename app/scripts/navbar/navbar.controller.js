@@ -7,21 +7,17 @@
 
     NavbarController.$inject = [
         '$scope',
-        '$cookies',
+        '$rootScope',
         '$state',
         'Auth',
         'Principal',
         'languageService',
         'toaster' ];
 
-    function NavbarController( $scope, $cookies, $state, Auth, Principal, languageService, toaster ){
+    function NavbarController( $scope, $rootScope, $state, Auth, Principal, languageService, toaster ){
         $scope.logout = logout;
         $scope.changeLanguage = changeLanguage;
-        if($cookies.get( 'language' )){
-            $scope.activeLanguage = $cookies.get( 'language' );
-        } else{
-            changeLanguage( 'pl_PL' );
-        }
+        $scope.activeLanguage = languageService.getActiveLanguage();
 
         Principal.identity().then( function( identity ){
             $scope.identity = identity;
@@ -43,6 +39,7 @@
         function changeLanguage( language ){
             $scope.activeLanguage = language;
             languageService.setActiveLanguage( language );
+            $rootScope.$broadcast('languageChange');
         }
     }
 })();

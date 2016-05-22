@@ -10,7 +10,8 @@
     function languageService( $cookies, $state, $translate ){
         return {
             initialize: initialize,
-            setActiveLanguage: setActiveLanguage
+            setActiveLanguage: setActiveLanguage,
+            getActiveLanguage: getActiveLanguage
         };
 
 
@@ -33,6 +34,16 @@
                     .then( function(){
                         $state.reload();
                     } );
+        }
+
+        function getActiveLanguage( ){
+            var language = $cookies.get( 'language' );
+            if(language){
+                return language;
+            } else{
+                setActiveLanguage( 'pl_PL' );
+                return 'pl_PL';
+            }
         }
     }
 
@@ -62,7 +73,7 @@
         }
     }
 
-    var pl = moment.defineLocale( 'pl', {
+    var pl = moment.updateLocale( 'pl', {
         months: function( momentToFormat, format ){
             if(format === ''){
                 // Hack: if format empty we know this is used to generate

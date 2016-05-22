@@ -5,14 +5,16 @@
             .module( 'roomBookingApp' )
             .controller( 'DashboardCtrl', DashboardCtrl );
 
-    DashboardCtrl.$inject = [ '$scope', '$uibModal', 'myReservations', 'Reservation', 'toaster' ];
+    DashboardCtrl.$inject = [ '$scope', '$rootScope', '$uibModal', 'myReservations', 'Reservation', 'languageService', 'toaster' ];
 
-    function DashboardCtrl( $scope, $uibModal, myReservations, Reservation, toaster ){
+    function DashboardCtrl( $scope, $rootScope, $uibModal, myReservations, Reservation, languageService, toaster ){
+        $scope.language = resolveLanguage();
         $scope.myReservations = [ ];
         $scope.myReservations.push( myReservations );
         $scope.calendar = { };
         $scope.calendar.config = {
             myReservationsCalendar: {
+                lang: $scope.language,
                 allDaySlot: false,
                 defaultView: 'agendaWeek',
                 editable: false,
@@ -59,6 +61,19 @@
                 $scope.myReservations.splice( 0, $scope.myReservations.length );
                 $scope.myReservations.push( result );
             } );
+        }
+
+        $rootScope.$on( 'languageChange', function(){
+            $scope.language = resolveLanguage();
+        } );
+
+        function resolveLanguage(){
+            var activeLanguage = languageService.getActiveLanguage();
+            if(activeLanguage === 'en_GB'){
+                return 'en';
+            } else{
+                return 'pl';
+            }
         }
 
     }
