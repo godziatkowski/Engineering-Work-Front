@@ -3,9 +3,9 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="#/">Room Booking App</a>
             <span ng-if="identity !== null">                
-                <a class="navbar-brand" ui-sref="building.list">
+                <a class="navbar-brand" ui-sref="room.list({floor: 0})">
                     <i class="fa fa-building"></i>
-                    <span translate-once="navbar.label.buildings">Buildings</span>
+                    <span translate-once="navbar.label.rooms">Rooms</span>
                 </a>                
             </span>
             <span ng-if="identity !== null">                
