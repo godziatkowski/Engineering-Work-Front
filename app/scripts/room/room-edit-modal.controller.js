@@ -5,11 +5,9 @@
             .module( 'roomBookingApp' )
             .controller( 'RoomEditModalCtrl', RoomEditModalCtrl );
 
-    RoomEditModalCtrl.$inject = [ '$scope', '$uibModalInstance', 'room', 'building', 'Room', 'toaster' ];
+    RoomEditModalCtrl.$inject = [ '$scope', '$uibModalInstance', 'room', 'Room', 'toaster' ];
 
-    function RoomEditModalCtrl( $scope, $uibModalInstance, room, building, Room, toaster ){
-        $scope.building = { };
-        angular.extend( $scope.building, building );
+    function RoomEditModalCtrl( $scope, $uibModalInstance, room, Room, toaster ){
         $scope.room = { };
         angular.extend( $scope.room, room );
         $scope.errorsOnFields = [ ];

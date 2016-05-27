@@ -1,20 +1,10 @@
 <div class="modal-header">
     <h3 class="modal-title">
-        Reserve room in {{building.name}} 
+        Reserve {{room.name}}
     </h3>
 </div>
 <div class="modal-body">
     <form class="form-horizontal" role="form" name="reservationAddForm">
-        <div class="row row-form">
-            <div class="col-xs-3 control-label">
-                Room
-            </div>
-            <div class="col-xs-4">
-                <select id="reservation-add-select-room" class="form-control" ng-model="selectedRoom" ng-options="room.name for room in rooms" ng-change="validateForm()">
-                    <option value="">Choose room</option>
-                </select>
-            </div>
-        </div>
         <div class="row row-eq-height">
             <div class="col-xs-3 control-label row-date-time-pick">
                 Resevation start

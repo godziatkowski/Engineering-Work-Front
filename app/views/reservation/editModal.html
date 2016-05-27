@@ -18,16 +18,6 @@
 <div class="modal-body">
     <div ng-show="tab === 'EDIT'">
         <form class="form-horizontal" role="form" name="reservationAddForm">
-            <div class="row row-form">
-                <div class="col-xs-3 control-label">
-                    Room
-                </div>
-                <div class="col-xs-4">
-                    <select id="reservation-add-select-room" class="form-control" ng-model="selectedRoom" ng-options="room.name for room in rooms" ng-change="validateForm()">
-                        <option value="">Choose room</option>
-                    </select>
-                </div>
-            </div>
             <div class="row row-eq-height">
                 <div class="col-xs-3 control-label row-date-time-pick">
                     Resevation start
@@ -82,7 +72,7 @@
 </div>        
 
 <div class="modal-footer">
-    <button id="accout-edit-modal-button-save" class="btn btn-success" type="submit" ng-click="save();" ng-disabled="!formIsCorrect">
+    <button id="accout-edit-modal-button-save" class="btn btn-success" type="submit" ng-click="save();" ng-disabled="!formIsCorrect || (reservationAddForm.$pristine && tab === 'EDIT')">
         <span ng-show="tab === 'EDIT'"><i class="fa fa-save"></i> Reserve</span>
         <span ng-show="tab === 'CANCEL'" ><i class="fa fa-check"></i> Yes</span>
     </button>

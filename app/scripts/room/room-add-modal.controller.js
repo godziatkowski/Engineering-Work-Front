@@ -5,16 +5,12 @@
             .module( 'roomBookingApp' )
             .controller( 'RoomAddModalCtrl', RoomAddModalCtrl );
 
-    RoomAddModalCtrl.$inject = [ '$scope', '$uibModalInstance',
-        'building', 'toaster', 'Room' ];
+    RoomAddModalCtrl.$inject = [ '$scope', '$uibModalInstance', 'toaster', 'Room' ];
 
-    function RoomAddModalCtrl( $scope, $uibModalInstance, building,
-            toaster, Room ){
-        $scope.building = building;
+    function RoomAddModalCtrl( $scope, $uibModalInstance,toaster, Room ){
         $scope.room = {
             name: undefined,
             roomType: 'LECTURE_HALL',
-            buildingId: $scope.building.id,
             floor: 0,
             seatsCount: 0,
             computerStationsCount: 0,

@@ -5,10 +5,9 @@
             .module( 'roomBookingApp' )
             .controller( 'RoomMarkAsNotUsableModalCtrl', RoomMarkAsNotUsableModalCtrl );
 
-    RoomMarkAsNotUsableModalCtrl.$inject = [ '$scope', '$uibModalInstance', 'building', 'room', 'Room' ];
+    RoomMarkAsNotUsableModalCtrl.$inject = [ '$scope', '$uibModalInstance', 'room', 'Room' ];
 
-    function RoomMarkAsNotUsableModalCtrl( $scope, $uibModalInstance, building, room, Room ){
-        $scope.building = building;
+    function RoomMarkAsNotUsableModalCtrl( $scope, $uibModalInstance, room, Room ){
         $scope.room = room;
         $scope.confirm = confirm;
 
