@@ -1,0 +1,8 @@
+<h3>
+    <span translate-once="room-calendar.label.reservations">Reservations for room</span> {{room.name}}
+</h3>
+<div class="panel">
+    <div class="panel-body">
+        <div ui-calendar="calendar.config.roomCalendar" ng-model="reservations" calendar="roomCalendar"></div>
+    </div>
+</div>
