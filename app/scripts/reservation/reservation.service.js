@@ -52,11 +52,6 @@
                 isArray: true,
                 transformResponse: transformResponse
             },
-            buildingReservations: {
-                url: config.apiUrl + '/reservation/building/:buildingId',
-                method: 'GET',
-                transformResponse: transformBuildingReservationsResponse
-            },
             cancel: {
                 url: config.apiUrl + '/reservation/:id/cancel',
                 method: 'PUT'
@@ -67,32 +62,12 @@
             data = angular.fromJson( data );
             if($.isArray( data )){
                 for( var value in data ){
-                    data[value].title = 'Reservation for room ' + data[value].roomName;
-                    data[value].start = moment( dateResolveUtil.convertToDate( data[value].startDate ) );
-                    data[value].end = moment( dateResolveUtil.convertToDate( data[value].endDate ) );
+                    data[value].title = 'Reservation for room ' + data[value].room.name;
+                    data[value].start = moment( dateResolveUtil.convertToDate( data[value].startDate ) ).utcOffset(2);
+                    data[value].end = moment( dateResolveUtil.convertToDate( data[value].endDate ) ).utcOffset(2);
                 }
             }
             return data;
         }
-
-        function transformBuildingReservationsResponse( data ){
-            data = angular.fromJson( data );
-            var i = 0;
-            for( var key in data ){
-                for( var value in data[key] ){
-                    data[key][value].title = 'Reservation for room ' + data[key][value].roomName + ' by ' + data[key][value].userFirstName + ' ' + data[key][value].userLastName;
-                    data[key][value].start = moment( dateResolveUtil.convertToDate( data[key][value].startDate ) );
-                    data[key][value].end = moment( dateResolveUtil.convertToDate( data[key][value].endDate ) );
-                    data[key][value].color = colorTable[i].color;
-                    data[key][value].textColor = colorTable[i].textColor;
-                }
-                i++;
-                if(i > 19){
-                    i = 0;
-                }
-            }
-            return data;
-        }
-
     }
 })();
