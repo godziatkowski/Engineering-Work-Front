@@ -1,0 +1,14 @@
+{
+    "account-details": {
+        "button": {
+            "change-password": "Change password",
+            "edit": "Edit account"
+        },
+        "label": {
+            "first-name": "First name",
+            "login": "Login",
+            "last-name": "Last name",
+            "page-title": "Account details"
+        }
+    }
+}

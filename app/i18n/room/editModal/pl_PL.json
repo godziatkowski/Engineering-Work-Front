@@ -1,0 +1,31 @@
+{
+    "room-edit-modal": {
+        "button": {
+            "cancel": "Anuluj",
+            "save": "Zapisz"
+        },
+        "label": {
+            "page-title": "Edytuj pomieszczenie",
+            "room": {
+                "count": {
+                    "computer-stations": "Stanowiska komputerowe",
+                    "seats": "Miejsca"
+                },
+                "floor": "Piętro",
+                "has-blackboard": "Ma tablicę",
+                "has-projector": "Ma projektor",
+                "name": {
+                    "already-exists": "Pomieszczenie o podanej nazwie już istnieje",
+                    "name": "Nazwa",
+                    "required": "Nazwa pomieszczenia jest wymagana.",
+                    "tooLong": "Nazwa pomieszczenia jest zbyt długa. Może miec maksymalnie {{max}} znaków"
+                },
+                "type": {
+                    "laboratory": "Laboratorium",
+                    "lecture-hall": "Audytorium",
+                    "type": "Typ"
+                }
+            }
+        }
+    }
+}

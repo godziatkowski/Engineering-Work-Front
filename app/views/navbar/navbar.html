@@ -16,7 +16,7 @@
             </span>
         </div>
 
-        <ul class="nav navbar-nav navbar-right" ng-if="identity !== null">
+        <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
                 <a id="navbar-dropdown-language"
                    href=""
@@ -60,7 +60,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="dropdown">
+            <li class="dropdown" ng-if="identity !== null">
                 <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     {{identity.login}}
                     <span class="caret"></span>

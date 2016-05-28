@@ -12,7 +12,12 @@
             parent: 'root',
             url: '/login',
             templateUrl: 'views/login/login.html',
-            controller: 'LoginController'
+            controller: 'LoginController',
+            resolve: {
+                translations: [ 'loadTranslations', function( loadTranslations ){
+                        return loadTranslations( 'login' );
+                    } ]
+            }
         } );
     }
 })();

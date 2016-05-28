@@ -1,59 +1,64 @@
 <div class="modal-header">
-    <h3 class="modal-title text-center row-form">
-        Add room in {{building.name}} 
+    <h3 class="modal-title text-center row-form" translate-once="room-add-modal.label.page-title">
+        Add room 
     </h3>
 </div>
 <div class="modal-body">
     <form class="form-horizontal" role="form" name="roomAddForm">
         <div class="row row-form" >
             <div class="col-xs-4 control-label">
-                <label for="add-room-modal-input-room-name" >Room Name</label>
+                <label for="add-room-modal-input-room-name" translate-once="room-add-modal.label.room.name">Room Name</label>
             </div>
             <div class="col-xs-8">
                 <input id="add-room-modal-input-room-name" class="form-control" name="name" type="text" 
-                       placeholder="Name" required="true" ng-maxlength="{{constraints.nameMax}}" ng-model="room.name"/>
-                <p class="error text-danger" ng-show="roomAddForm.name.$dirty && roomAddForm.name.$error.maxlength">Name for room is too long. Maximum accpeted length is {{constraints.nameMax}} characters</p>
-                <p class="error text-danger" ng-show="roomAddForm.name.$dirty && roomAddForm.name.$error.required">Name for room is required.</p>
-                <p class="error text-danger" ng-show="roomAddForm.name.$dirty && ( errorsOnFields.indexOf( 'name' ) !== -1 )">Room with given name already exist in building {{building.name}}</p>
+                       placeholder="Name" required="true" ng-maxlength="{{constraints.maxName}}" ng-model="room.name"/>
+                <p class="error text-danger" translate="room-add-modal.label.room.name.tooLong" translate-value-max="{{constraints.maxName}}"
+                   ng-show="roomAddForm.name.$dirty && roomAddForm.name.$error.maxlength">
+                    Name for room is too long. Maximum accpeted length is {{constraints.maxName}} characters
+                </p>
+                <p class="error text-danger" translate="room-add-modal.label.room.name.required"
+                   ng-show="roomAddForm.name.$dirty && roomAddForm.name.$error.required">Name for room is required.</p>
+                <p class="error text-danger" translate="room-add-modal.label.room.name.alread-exists"
+                   ng-show="roomAddForm.name.$dirty && ( errorsOnFields.indexOf( 'name' ) !== -1 )">Room with given name already exist</p>
             </div>
         </div>
         <div class="row row-form">
             <div class="col-xs-4 control-label">
-                <label for="add-room-modal-input-room-type">Type</label>
+                <label for="add-room-modal-input-room-type" translate-once="room-add-modal.label.room.type">Type</label>
             </div>
             <div class="col-xs-4">
                 <select id="add-room-modal-input-room-type" class="form-control" ng-model="room.roomType">
-                    <option value="LECTURE_HALL">Lecture Hall</option>
-                    <option value="LABORATORY">Laboratory</option>
+                    <option value="LECTURE_HALL" translate-once="room-add-modal.label.room.type.lecture-hall">Lecture Hall</option>
+                    <option value="LABORATORY" translate-once="room-add-modal.label.room.type.laboratory">Laboratory</option>
                 </select>
             </div>
             <div class="col-xs-4">
                 <button id="add-room-modal-input-room-has-projector" type="button" class="btn btn-block" 
                         ng-class="{'btn-success': room.hasProjector, 'btn-muted': !room.hasProjector}" ng-click="room.hasProjector = !room.hasProjector">
                     <i class="fa" ng-class="{'fa-check-square': room.hasProjector, 'fa-square': !room.hasProjector}"></i>
-                    Has projector
+                    <span translate-once="room-add-modal.label.room.has-projector">Has projector</span>
                 </button>
             </div>
         </div>
         <div class="row row-form">
             <div class="col-xs-4 control-label">
-                <label for="add-room-modal-input-room-floor">On floor </label>
+                <label for="add-room-modal-input-room-floor" translate-once="room-add-modal.label.room.floor">On floor </label>
             </div>
-            <div class="col-xs-3">
+            <div class="col-xs-4">
                 <input id="add-room-modal-input-room-floor" class="form-control" type="number" required="true" ng-model="room.floor" min="0" max="100"/>
             </div>
-            <div class="col-xs-4 col-xs-offset-1">
+            <div class="col-xs-4">
                 <button id="add-room-modal-input-room-has-blackboard" type="button" class="btn btn-block" 
                         ng-class="{'btn-success': room.hasBlackboard, 'btn-muted': !room.hasBlackboard}" ng-click="room.hasBlackboard = !room.hasBlackboard">
                     <i class="fa" ng-class="{'fa-check-square': room.hasBlackboard, 'fa-square': !room.hasBlackboard}"></i>
-                    Has blackboard
+                    <span translate-once="room-add-modal.label.room.has-blackboard">Has blackboard</span>
                 </button>
             </div>
 
         </div>
         <div class="row row-form">                
             <div class="col-xs-4 control-label">
-                <label for="add-room-modal-input-room-seats">Seats </label>
+                <label for="add-room-modal-input-room-seats" translate-once="room-add-modal.label.room.count.seats">Seats </label>
             </div>
             <div class="col-xs-4">
                 <input id="add-room-modal-input-room-seats" class="form-control" 
@@ -63,7 +68,7 @@
         </div>
         <div class="row row-form">
             <div class="col-xs-4 control-label">
-                <label for="add-room-modal-input-room-computer-stations">Computer stations</label>
+                <label for="add-room-modal-input-room-computer-stations" translate-once="room-add-modal.label.room.count.computer-stations">Computer stations</label>
             </div>
             <div class="col-xs-4">
                 <input id="add-room-modal-input-room-computer-stations" class="form-control" 
@@ -75,10 +80,10 @@
 <div class="modal-footer">
     <button id="add-room-modal-button-room-submit" type="submit" class="btn btn-success" ng-click="save()" ng-disabled="roomAddForm.$invalid">
         <i class="fa fa-save"></i>
-        Save
+        <span translate-once="room-add-modal.button.save">Save</span>
     </button>
     <button id="add-room-modal-button-room-submit" type="submit" class="btn" ng-click="$dismiss()">
         <i class="fa fa-times"></i>
-        Cancel
+        <span translate-once="room-add-modal.button.cancel">Cancel</span>
     </button>
 </div>

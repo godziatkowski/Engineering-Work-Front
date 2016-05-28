@@ -1,0 +1,31 @@
+{
+    "room-edit-modal": {
+        "button": {
+            "cancel": "Cancel",
+            "save": "Save"
+        },
+        "label": {
+            "page-title": "Edit room",
+            "room": {
+                "count": {
+                    "computer-stations": "Computer stations",
+                    "seats": "Seats"
+                },
+                "floor": "On floor",
+                "has-blackboard": "Has blackboard",
+                "has-projector": "Has projector",
+                "name": {
+                    "already-exists": "Room with given name already exist",
+                    "name": "Room Name",
+                    "required": "Name for room is required.",
+                    "tooLong": "Name for room is too long. Maximum accpeted length is {{max}} characters"
+                },
+                "type": {
+                    "laboratory": "Laboratory",
+                    "lecture-hall": "Lecture Hall",
+                    "type": "Type"
+                }
+            }
+        }
+    }
+}

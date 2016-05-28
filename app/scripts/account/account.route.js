@@ -22,7 +22,10 @@
                     templateUrl: 'views/account/details.html',
                     controller: 'AccountDetailsCtrl',
                     resolve: {
-                        account: resolveAccountData
+                        account: resolveAccountData,
+                        translations: [ 'loadTranslations', function( loadTranslations ){
+                                return loadTranslations( 'account/details' );
+                            } ]
                     }
                 } );
 

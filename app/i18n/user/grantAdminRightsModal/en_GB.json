@@ -1,0 +1,13 @@
+{
+    "user-grant-admin-rigths-modal": {
+        "button": {
+            "cancel": "Cancel",
+            "confirm": "Confirm"
+        },
+        "label": {
+            "confirmation": "Are you sure you want to grant admin rights for this user?",
+            "page-title": "Grant admin rights for",
+            "warn": "This decision cannot be undone!"
+        }
+    }
+}

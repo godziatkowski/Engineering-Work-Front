@@ -9,11 +9,11 @@
 
     function LoginController( $scope, $rootScope, $state, Auth ){
         $scope.login = login;
-
+        $scope.username = "";
+        $scope.password = "";
 
         function login( event ){
             event.preventDefault();
-
             Auth.login( {
                 username: $scope.username,
                 password: $scope.password

@@ -1,0 +1,34 @@
+{
+    "reservation-edit-modal": {
+        "button": {
+            "cancel": {
+                "cancel": "Cancel",
+                "no": "No"
+            },
+            "confirm": {
+                "save": "Save changes",
+                "yes": "Yes"
+            }
+        },
+        "label": {
+            "cancel": {
+                "confirm": {
+                    "first-part": "Are you sure you want to cancel your reservation for room ",
+                    "second-part": " starting at ",
+                    "third-part": " and ending at "
+                },
+                "warn": "This action cannot be undone!"
+            },
+            "page-title": "Reservation for room {{name}}",
+            "reservation": {
+                "ends": "Reservation ends at:",
+                "ends-before-starts": "Start of reservation must be before end",
+                "starts": "Reservation starts at:"
+            },
+            "tab": {
+                "cancel": "Cancel reservation",
+                "edit": "Edit reservation"
+            }
+        }
+    }
+}

@@ -1,14 +1,16 @@
-<div class="modal-header">
+<div class="modal-header" translate="room-usability-modals.label.usable.page-title" translate-value-name="{{room.name}}">
     Mark {{room.name}} as usable
 </div>
 <div class="modal-body">
     <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-12" translate="room-usability-modals.label.usable.confirm" translate-value-name="{{room.name}}">
             Are you sure you want to mark {{room.name}} as usable?
         </div>
     </div>
 </div>
 <div class="modal-footer">
-    <button id="room-mark-as-usable-button-confirm" class="btn btn-success" type="submit" ng-click="confirm()"> Yes</button>
-    <button id="room-mark-as-usable-button-cancel" class="btn btn-danger" type="reset" ng-click="$dismiss()"> No</button>
+    <button id="room-mark-as-usable-button-confirm" class="btn btn-success" type="submit" ng-click="confirm()"
+            translate-once="room-usability-modals.button.yes"> Yes</button>
+    <button id="room-mark-as-usable-button-cancel" class="btn btn-danger" type="reset" ng-click="$dismiss()"
+            translate-once="room-usability-modals.button.no"> No</button>
 </div>

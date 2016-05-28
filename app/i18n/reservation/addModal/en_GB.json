@@ -1,0 +1,16 @@
+{
+    "reservation-add-modal": {
+        "button": {
+            "cancel": "Cancel",
+            "reserve": "Reserve"
+        },
+        "label": {
+            "page-title": "Reserve room",
+            "reservation": {
+                "ends": "Reservation ends at:",
+                "ends-before-starts": "Start of reservation must be before end",
+                "starts": "Reservation starts at:"
+            }
+        }
+    }
+}

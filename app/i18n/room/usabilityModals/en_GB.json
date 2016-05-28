@@ -1,0 +1,19 @@
+{
+    "room-usability-modals": {
+        "button": {
+            "no": "No",
+            "yes": "Yes"
+        },
+        "label": {
+            "not-usable": {
+                "confirm": "Are you sure you want to mark room \"{{name}}\" as not usable?",
+                "page-title": "Mark {{name}}  as not usable",
+                "warn": "Marking room as not usable will prevent making any reservations for this room."
+            },
+            "usable": {
+                "confirm": "Are you sure you want to mark {{name}} as usable?",
+                "page-title": "Mark {{name}} as usable"
+            }
+        }
+    }
+}

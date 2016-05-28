@@ -1,0 +1,19 @@
+{
+    "account-change-password-modal": {
+        "button": {
+            "cancel": "Cancel",
+            "save": "Save"
+        },
+        "label": {
+            "page-title": "Change password",
+            "password": {
+                "confirm": "Confirm password",
+                "do-not-match": "Passwords don't match",
+                "password": "Password",
+                "required": "Password is required",
+                "tooLong": "Password too long. It can contain maximum {{max}} characters",
+                "tooShort": "Password too short. It has to be at least {{min}} characters long"
+            }
+        }
+    }
+}

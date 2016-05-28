@@ -51,7 +51,10 @@
                     },
                     ends: function(){
                         return end.toISOString();
-                    }
+                    },
+                    translations: [ 'loadTranslations', function( loadTranslations ){
+                            return loadTranslations( 'reservation/addModal' );
+                        } ]
                 }
             } );
 
@@ -74,7 +77,10 @@
                         },
                         reservation: function(){
                             return event;
-                        }
+                        },
+                        translations: [ 'loadTranslations', function( loadTranslations ){
+                                return loadTranslations( 'reservation/editModal' );
+                            } ]
                     }
                 } );
 
@@ -96,7 +102,7 @@
                         $scope.reservations.push( result );
                     } );
         }
-        
+
         $rootScope.$on( 'languageChange', function(){
             $scope.language = resolveLanguage();
         } );

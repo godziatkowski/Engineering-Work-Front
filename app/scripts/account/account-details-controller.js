@@ -12,13 +12,16 @@
         $scope.openChangePasswordModal = openChangePasswordModal;
         $scope.openEditDetailsModal = openEditDetailsModal;
 
-
-
         function openChangePasswordModal(){
             var modal = $uibModal.open( {
                 templateUrl: '/views/account/changePasswordModal.html',
                 controller: 'AccountChangePasswordModalCtrl',
-                size: 'md'
+                size: 'md',
+                resolve: {
+                    translations: [ 'loadTranslations', function( loadTranslations ){
+                            return loadTranslations( 'account/changePasswordModal' );
+                        } ]
+                }
             } );
             modal.result.then( function(){
                 toaster.pop( 'success', 'Password succesfully changed' );
@@ -32,7 +35,10 @@
                 resolve: {
                     account: function(){
                         return $scope.accountData;
-                    }
+                    },
+                    translations: [ 'loadTranslations', function( loadTranslations ){
+                            return loadTranslations( 'account/editModal' );
+                        } ]
                 }
             } );
             modal.result.then( function(){

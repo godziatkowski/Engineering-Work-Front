@@ -1,0 +1,29 @@
+{
+    "room-list": {
+        "button": {
+            "add": "Dodaj pomieszczenie",
+            "edit": "Edytuj pomieszczenie",
+            "mark-as-not-usable": "Oznacz jako nie dostępne",
+            "mark-as-usable": "Oznacz jako dostępne"
+        },
+        "fitler": {
+            "name": "Nazwa",
+            "blackboard": "Tablica",
+            "computerStationCount": "Stanowiska komputerowe",
+            "floor": "Piętro",
+            "manage": "Zarządzaj",
+            "projector": "Projektor",
+            "seatsCount": "Liczba miejsc",
+            "type": "Typ",
+            "usable": "Dostępny"
+        },
+        "label": {
+            "rooms": "Pomieszczenia",
+            "no-rooms": "Brak zdefiniowanych pomieszczeń",
+            "roomType": {
+                "auditory": "Audytorium",
+                "laboratory": "Laboratorium"
+            }
+        }
+    }
+}

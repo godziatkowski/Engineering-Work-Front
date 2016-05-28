@@ -1,0 +1,19 @@
+{
+    "account-change-password-modal": {
+        "button": {
+            "cancel": "Anuluj",
+            "save": "Zapisz"
+        },
+        "label": {
+            "page-title": "Zmiana hasła",
+            "password": {
+                "confirm": "Powtórz hasło",
+                "do-not-match": "Podane hasła nie pokrywają się",
+                "password": "Hasło",
+                "required": "Hasło jest wymagane",
+                "tooLong": "Podane hasło jest za długie - maksymalna ilość znaków to {{max}}",
+                "tooShort": "Podane hasło jest za krótkie - minimalna ilość znaków to {{min}}"
+            }
+        }
+    }
+}

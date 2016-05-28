@@ -1,0 +1,37 @@
+{
+    "register-page": {
+        "button": {
+            "sign-up": "Zarejestruj"
+        },
+        "label": {
+            "first-name": {
+                "first-name": "Imię",
+                "required": "Imię jest wymagane",
+                "tooLong": "Imię jest zbyt długie, nie może być dłuższe niż {{max}} znaków"
+            },
+            "last-name": {
+                "last-name": "Nazwisko",
+                "required": "Nazwisko jest wymagane",
+                "tooLong": "Nazwisko jest zbyt długie, nie może być dłuższe niż {{max}} znaków"
+            },
+            "login": {
+                "already-in-use": "Login jest już używany",
+                "login": "Login",
+                "pattern": "Login nie spełnia wymaganego formatu",
+                "required": "Login jest wymagany",
+                "tooLong": "Login jest zbyt długi, nie może być dłuższa niż {{max}} znaków",
+                "tooShort": "Login jest zbyt krótki, nie może być krótsza niż {{min}} znaków"
+            },
+            "password": {
+                "confirm": "Powtórz hasło",
+                "do-not-match": "Podane hasła nie pokrywają się",
+                "password": "Hasło",
+                "required": "Hasło jest wymagane",
+                "tooLong": "Podane hasło jest za długie - maksymalna ilość znaków to {{max}}",
+                "tooShort": "Podane hasło jest za krótkie - minimalna ilość znaków to {{min}}"
+            },
+            "sign-in": "Zaloguj się do istniejącego konta",
+            "sign-up": "Zarejestruj się"
+        }
+    }
+}

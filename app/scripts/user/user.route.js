@@ -24,7 +24,10 @@
                     templateUrl: 'views/user/list.html',
                     controller: 'UserListCtrl',
                     resolve: {
-                        users: resolveUsers
+                        users: resolveUsers,
+                        translations: [ 'loadTranslations', function( loadTranslations ){
+                                return loadTranslations( 'user/list' );
+                            } ]
                     }
                 } );
 

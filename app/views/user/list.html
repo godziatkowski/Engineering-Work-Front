@@ -1,26 +1,26 @@
-<h3>
+<h3 translate-once="user-list.label.page-title">
     Users
 </h3>
 
 <div class="row" ng-if="!users.length">
     <div class="col-xs-6 col-xs-offset-3 alert alert-warning">
         <h3>
-            <i class="fa fa-exclamation-triangle"></i> No Users found
+            <i class="fa fa-exclamation-triangle"></i> <span translate-once="user-list.label.no-users">No Users found</span>
         </h3>
     </div>
 </div>
 <div ng-if="users.length">
     <div class="row row-header-top-with-bottom">
-        <div class="col-xs-3">
+        <div class="col-xs-3" translate-once="user-list.label.user.login">
             Login
         </div>
-        <div class="col-xs-3">
+        <div class="col-xs-3" translate-once="user-list.label.user.first-name">
             First name
         </div>
-        <div class="col-xs-3">
+        <div class="col-xs-3" translate-once="user-list.label.user.last-name">
             Last name
         </div>
-        <div class="col-xs-3">
+        <div class="col-xs-3" translate-once="user-list.label.user.role">
             User roles
         </div>
     </div>
@@ -38,14 +38,25 @@
             <div class="row">
                 <div class="col-xs-6">
                     <span ng-repeat=" userRole in user.userRoles">
-                        {{userRole}}<span ng-if="!$last">,&nbsp;</span>
+                        <span translate-once="user-list.label.user.role.admin" ng-if="userRole === 'ADMIN'">{{userRole}}</span><!--
+                        --><span translate-once="user-list.label.user.role.user" ng-if="userRole === 'USER'">{{userRole}}</span><!--
+                        --><span translate-once="user-list.label.user.role.keeper" ng-if="userRole === 'KEEPER'">{{userRole}}</span><!--
+                        --><span ng-if="!$last">,&nbsp;</span>
                     </span>
                 </div>
                 <div class="col-xs-6 text-center">
-                    <button id="user-list-button-grant-admin-role" class="btn btn-block btn-primary" type="button" 
-                        ng-click="openGrantAdminRightsModal(user)" ng-disabled="user.userRoles.indexOf('ADMIN') !== -1">
-                        <i class="fa fa-user-plus"></i> Grant admin role
-                    </button>
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-2x fa-cog"></i>
+                    </a>
+                    <ul class="dropdown-menu pull-right">
+                        <li>
+                            <a id="user-list-anchor-grant-admin-role" href="" ng-click="openGrantAdminRightsModal(user)"
+                               ng-class="{'disabled': user.userRoles.indexOf('ADMIN') !== -1}">
+                                <i class="fa fa-user-plus"></i> 
+                                <span translate-once="user-list.button.grantAdminRights">Grant admin role</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

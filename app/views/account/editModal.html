@@ -1,5 +1,5 @@
 <div class="modal-header">
-    <div class="modal-title">
+    <div class="modal-title" translate-once="account-edit-modal.label.page-title">
         Change account details
     </div>
 </div>
@@ -7,13 +7,14 @@
     <form class="form-horizontal" role="form" name="editAccountForm">
         <div class="row row-form">
             <div class="col-xs-4 control-label">
-                <label>Login</label>
+                <label translate-once="account-edit-modal.label.login">Login</label>
             </div>
             <div class="col-xs-8">
                 <input type="text"
                        class="form-control"
                        name="login"
-                       placeholder="Login"
+                       translate=""
+                       translate-attr-placeholder="account-edit-modal.label.login"
                        ng-model="account.login"
                        ng-model-options="{ debounce: 250 }"
                        required
@@ -22,61 +23,76 @@
                        ng-pattern="constraints.loginPattern"
                        autofocus>
 
-                <p class="text-danger" ng-show="editAccountForm.login.$dirty && editAccountForm.login.$error.minlength">
-                    Username too short. It has to be at least 3 characters long
+                <p class="text-danger" ng-show="editAccountForm.login.$dirty && editAccountForm.login.$error.minlength"
+                   translate="account-edit-modal.label.login.tooShort"
+                   translate-values="{min: {{constraints.loginMin}}}">
+                    Login too short. It has to be at least {{constraints.loginMin}} characters long
                 </p>
-                <p class="text-danger" ng-show="editAccountForm.login.$dirty && editAccountForm.login.$error.maxlength">
-                    Username too long. It can contain maximum 20 characters
+                <p class="text-danger" ng-show="editAccountForm.login.$dirty && editAccountForm.login.$error.maxlength"
+                   translate="account-edit-modal.label.login.tooLong"
+                   translate-values="{max: {{constraints.loginMax}}}">
+                    Login too long. It can contain maximum {{constraints.loginMax}} characters
                 </p>
-                <p class="text-danger" ng-show="editAccountForm.login.$dirty && editAccountForm.login.$error.pattern">
-                    Username contains invalid characters
+                <p class="text-danger" ng-show="editAccountForm.login.$dirty && editAccountForm.login.$error.pattern"
+                   translate-once="account-edit-modal.label.login.pattern">
+                    Login contains invalid characters
                 </p>
-                <p class="text-danger" ng-show="editAccountForm.login.$dirty && editAccountForm.login.$error.required">
-                    Username is required
+                <p class="text-danger" ng-show="editAccountForm.login.$dirty && editAccountForm.login.$error.required"
+                   translate-once="account-edit-modal.label.login.required">
+                    Login is required
                 </p>
-                <p class="text-danger" ng-show="errors['loginAlreadyInUse']">
-                    Username is already in use
+                <p class="text-danger" ng-show="errors['loginAlreadyInUse']"
+                   translate-once="account-edit-modal.label.login.already-in-use">
+                    Login is already in use
                 </p>
             </div>
         </div>
         <div class="row row-form">
             <div class="col-xs-4 control-label">
-                <label>First name</label>
+                <label translate-once="account-edit-modal.label.first-name">First name</label>
             </div>
             <div class="col-xs-8">
                 <input type="text"
                        class="form-control"
                        name="firstName"
-                       placeholder="First Name"
+                       translate=""
+                       translate-attr-placeholder="account-edit-modal.label.first-name"
                        ng-model="account.firstName"
                        ng-model-options="{ debounce: 250 }"
                        required
                        ng-maxlength="constraints.firstNameMax">
-                <p class="text-danger" ng-show="editAccountForm.firstName.$dirty && editAccountForm.firstName.$error.maxlength">
+                <p class="text-danger" ng-show="editAccountForm.firstName.$dirty && editAccountForm.firstName.$error.maxlength"
+                   translate="account-edit-modal.label.first-name.tooLong"
+                   translate-values="{max: {{constraints.firstNameMax}}}">
                     First name too long. It can contain maximum 25 characters
                 </p>
-                <p class="text-danger" ng-show="editAccountForm.firstName.$dirty && editAccountForm.firstName.$error.required">
+                <p class="text-danger" ng-show="editAccountForm.firstName.$dirty && editAccountForm.firstName.$error.required"
+                   translate-once="account-edit-modal.label.first-name.required">
                     First name is required
                 </p>
             </div>
         </div>
         <div class="row row-form">
             <div class="col-xs-4 control-label">
-                <label>Last name</label>
+                <label translate-once="account-edit-modal.label.last-name">Last name</label>
             </div>
             <div class="col-xs-8">
                 <input type="text"
                        class="form-control"
                        name="lastName"
-                       placeholder="Last Name"
+                       translate=""
+                       translate-attr-placeholder="account-edit-modal.label.last-name"
                        ng-model="account.lastName"
                        ng-model-options="{ debounce: 250 }"
                        required
                        ng-maxlength="constraints.lastNameMax">
-                <p class="text-danger" ng-show="editAccountForm.lastName.$dirty && editAccountForm.lastName.$error.maxlength">
+                <p class="text-danger" ng-show="editAccountForm.lastName.$dirty && editAccountForm.lastName.$error.maxlength"
+                   translate="account-edit-modal.label.last-name.tooLong"
+                   translate-values="{max: {{constraints.lastNameMax}}}">
                     Last name too long. It can contain maximum 50 characters
                 </p>
-                <p class="text-danger" ng-show="editAccountForm.lastName.$dirty && editAccountForm.lastName.$error.required">
+                <p class="text-danger" ng-show="editAccountForm.lastName.$dirty && editAccountForm.lastName.$error.required"
+                   translate-once="account-edit-modal.label.last-name.requried">
                     Last name is required
                 </p>
             </div>
@@ -85,9 +101,9 @@
 </div>
 <div class="modal-footer">
     <button id="accout-edit-modal-button-save" class="btn btn-success" type="submit" ng-click="save();" ng-disabled="editAccountForm.$invalid">
-        <i class="fa fa-save"></i> Save
+        <i class="fa fa-save"></i> <span translate-once="account-edit-modal.button.save">Save</span>
     </button>
     <button id="accout-edit-modal-button-cancel" class="btn btn-danger" type="button" ng-click="$dismiss()">
-        <i class="fa fa-times"></i> Cancel
+        <i class="fa fa-times"></i> <span translate-once="account-edit-modal.button.cancel">Cancel</span>
     </button>
 </div>

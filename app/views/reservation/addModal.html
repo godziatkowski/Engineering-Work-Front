@@ -1,12 +1,12 @@
 <div class="modal-header">
     <h3 class="modal-title">
-        Reserve {{room.name}}
+        <span translate-once="reservation-add-modal.label.page-title">Reserve</span> {{room.name}}
     </h3>
 </div>
 <div class="modal-body">
     <form class="form-horizontal" role="form" name="reservationAddForm">
         <div class="row row-eq-height">
-            <div class="col-xs-3 control-label row-date-time-pick">
+            <div class="col-xs-4 control-label row-date-time-pick" translate-once="reservation-add-modal.label.reservation.starts">
                 Resevation start
             </div>
             <div class="col-xs-4 row-date-time-pick">
@@ -22,7 +22,7 @@
             </div>            
         </div>
         <div class="row row-eq-height">
-            <div class="col-xs-3 control-label row-date-time-pick">
+            <div class="col-xs-4 control-label row-date-time-pick" translate-once="reservation-add-modal.label.reservation.ends">
                 Resevation end
             </div>
             <div class="col-xs-4 row-date-time-pick">
@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="row row-form">
-            <div class="col-xs-9 col-xs-offset-3 text-danger" ng-if="incorrectDates">
+            <div class="col-xs-9 col-xs-offset-3 text-danger" ng-if="incorrectDates" translate-once="reservation-add-modal.label.reservation.ends-before-starts">
                 Reservation start must be before it's end.
             </div> 
         </div> 
@@ -47,9 +47,9 @@
 
 <div class="modal-footer">
     <button id="accout-edit-modal-button-save" class="btn btn-success" type="submit" ng-click="save();" ng-disabled="!formIsCorrect">
-        <i class="fa fa-save"></i> Reserve
+        <i class="fa fa-save"></i> <span translate-once="reservation-add-modal.button.reserve">Reserve</span>
     </button>
     <button id="accout-edit-modal-button-cancel" class="btn btn-danger" type="button" ng-click="$dismiss()">
-        <i class="fa fa-times"></i> Cancel
+        <i class="fa fa-times"></i> <span translate-once="reservation-add-modal.button.cancel">Cancel</span>
     </button>
 </div>

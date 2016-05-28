@@ -1,0 +1,23 @@
+{
+    "user-list": {
+        "button": {
+            "grantAdminRights": "Grant admin role",
+            "grantKeeperRights": "Grant room keeper role"
+        },
+        "label": {
+            "no-users": "No Users found",
+            "page-title": "Users",
+            "user": {
+                "first-name": "First name",
+                "last-name": "Last name",
+                "login": "Login",
+                "role": {
+                    "admin": "Administrator",
+                    "keeper": "Room keeper",
+                    "role":"User roles",
+                    "user": "User"
+                }
+            }
+        }
+    }
+}

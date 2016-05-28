@@ -1,26 +1,26 @@
 <div class="modal-header">
     <h3 class="modal-title">
-        Grant admin rights for {{user.firstName}} {{user.lastName}}
+        <span translate-once="user-grant-admin-rigths-modal.label.page-title">Grant admin rights for</span> <br/>{{user.firstName}} {{user.lastName}}
     </h3>
 </div>
 <div class="moda-body">
     <div class="text-center" >
-        <strong>
+        <strong translate-once="user-grant-admin-rigths-modal.label.confirmation">
             Are you sure you want to grant admin rights for this user?
         </strong>
     </div>
     <br/>
     <div class="alert alert-warning text-center">
-        <i class="fa fa-exclamation-triangle"></i> This decision cannot be undone!
+        <i class="fa fa-exclamation-triangle"></i> <span translate-once="user-grant-admin-rigths-modal.label.warn">This decision cannot be undone!</span>
     </div>
 </div>
 <div class="modal-footer">
     <button id="add-room-modal-button-room-submit" type="submit" class="btn btn-success" ng-click="confirm()" >
         <i class="fa fa-check"></i>
-        Confirm
+        <span translate-once="user-grant-admin-rigths-modal.button.confirm">Confirm</span>
     </button>
     <button id="add-room-modal-button-room-submit" type="submit" class="btn" ng-click="$dismiss()">
         <i class="fa fa-times"></i>
-        Cancel
+        <span translate-once="user-grant-admin-rigths-modal.button.cancel">Cancel</span>
     </button>
 </div>

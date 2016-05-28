@@ -1,0 +1,23 @@
+{
+    "user-list": {
+        "button": {
+            "grantAdminRights": "Przyznaj prawa administratora",
+            "grantKeeperRights": "Przyznaj prawa opiekuna sali"
+        },
+        "label": {
+            "no-users": "Brak użytkowników",
+            "page-title": "Użytkownicy",
+            "user": {
+                "first-name": "Imie",
+                "last-name": "Nazwisko",
+                "login": "Login",
+                "role": {
+                    "admin": "Administrator",
+                    "keeper": "Opiekun sali",
+                    "role": "Uprawnienia",
+                    "user": "Użytkownik"
+                }
+            }
+        }
+    }
+}

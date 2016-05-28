@@ -1,0 +1,16 @@
+{
+    "reservation-add-modal": {
+        "button": {
+            "cancel": "Anuluj",
+            "reserve": "Rezerwuj"
+        },
+        "label": {
+            "page-title": "Rezerwacja sali",
+            "reservation": {
+                "ends": "Koniec rezerwacji",
+                "ends-before-starts": "Początek rezerwacji musi poprzedzać jej zakończenie",
+                "starts": "Początek rezerwacji"
+            }
+        }
+    }
+}

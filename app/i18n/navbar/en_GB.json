@@ -2,7 +2,7 @@
     "navbar": {
         "label": {
             "accountData": "Account Data",
-            "buildings": "Buildings",
+            "rooms": "Rooms",
             "logout": "Logout",
             "users": "Users"
         },

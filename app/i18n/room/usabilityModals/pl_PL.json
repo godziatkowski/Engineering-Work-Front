@@ -1,0 +1,19 @@
+{
+    "room-usability-modals": {
+        "button": {
+            "no": "Nie",
+            "yes": "Tak"
+        },
+        "label": {
+            "not-usable": {
+                "confirm": "Czy napewno chcesz oznaczyć pomieszczenie \"{{name}}\" jako nie dostępne?",
+                "page-title": "Ozacz pomieszczenie {{name}}  jako nie dostępne",
+                "warn": "Oznaczenie pomieszczenia jako nie dostępne nie pozwoli na dokonywanie rezerwacji."
+            },
+            "usable": {
+                "confirm": "Czy napewno chcesz oznaczyc pomieszczenie {{name}} jako dostępne?",
+                "page-title": "Oznacz pomieszczenie {{name}} jako dostępne"
+            }
+        }
+    }
+}

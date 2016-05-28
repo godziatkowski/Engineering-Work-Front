@@ -1,4 +1,4 @@
-<h3>
+<h3 translate-once="account-details.label.page-title">
     Account Details
 </h3>
 
@@ -8,7 +8,7 @@
             <div class="col-xs-4 col-xs-offset-2">
                 <div class="row">
                     <div class="col-sm-3 text-right">
-                        <label>
+                        <label translate-once="account-details.label.login">
                             Login
                         </label>
                     </div>
@@ -18,7 +18,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-3 text-right">
-                        <label>
+                        <label translate-once="account-details.label.first-name">
                             First name
                         </label>
                     </div>
@@ -28,7 +28,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-3 text-right">
-                        <label>
+                        <label translate-once="account-details.label.last-name">
                             Last name
                         </label>
                     </div>
@@ -41,7 +41,7 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <button id="account-details-button-edit-account" class="btn btn-primary btn-block" type="button" ng-click="openEditDetailsModal()">
-                            <i class="fa fa-pencil"></i> Edit Account
+                            <i class="fa fa-pencil"></i> <span translate-once="account-details.button.edit">Edit Account</span>
                         </button>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <button id="account-details-button-change-password" class="btn btn-primary btn-block" type="button" ng-click="openChangePasswordModal()">
-                            <i class="fa fa-pencil"></i> Change password
+                            <i class="fa fa-pencil"></i> <span translate-once="account-details.button.change-password">Change password</span>
                         </button>
                     </div>
                 </div>

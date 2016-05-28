@@ -1,17 +1,19 @@
-<div class="modal-header">
+<div class="modal-header" translate="room-usability-modals.label.not-usable.page-title" translate-value-name="{{room.name}}">
     Mark {{room.name}}  as not usable
 </div>
 <div class="modal-body">
     <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-12" translate="room-usability-modals.label.not-usable.confirm" translate-value-name="{{room.name}}">
             Are you sure you want to mark room "{{room.name}}" as not usable?
         </div>
     </div>
     <div class="alert alert-warning">
-        <i class="fa fa-exclamation-triangle"></i> Marking room as not usable will prevent making any reservations for this room.
+        <i class="fa fa-exclamation-triangle"></i> <span translate-once="room-usability-modals.label.not-usable.warn">Marking room as not usable will prevent making any reservations for this room.</span>
     </div>
 </div>
 <div class="modal-footer">
-    <button id="room-mark-as-usable-button-confirm" class="btn btn-success" type="submit" ng-click="confirm()"> Yes</button>
-    <button id="room-mark-as-usable-button-cancel" class="btn btn-danger" type="reset" ng-click="$dismiss()"> No</button>
+    <button id="room-mark-as-usable-button-confirm" class="btn btn-success" type="submit" ng-click="confirm()"
+            translate-once="room-usability-modals.button.yes"> Yes</button>
+    <button id="room-mark-as-usable-button-cancel" class="btn btn-danger" type="reset" ng-click="$dismiss()"
+            translate-once="room-usability-modals.button.no"> No</button>
 </div>

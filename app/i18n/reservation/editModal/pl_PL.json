@@ -1,0 +1,34 @@
+{
+    "reservation-edit-modal": {
+        "button": {
+            "cancel": {
+                "cancel": "Anuluj",
+                "no": "Nie"
+            },
+            "confirm": {
+                "save": "Zapisz zmiany",
+                "yes": "Tak"
+            }
+        },
+        "label": {
+            "cancel": {
+                "confirm": {
+                       "first-part": "Czy jesteś pewny że chcesz anulować rezerwację sali ",
+                       "second-part": " w terminie pomiędzy ",
+                       "third-part": ", a "
+                },
+                "warn": "Cofnięcie tej akcji jest nie możliwe! W celu ponownej rezerwacji będzie wymagane wysłanie nowej prośby o rezerwację"
+            },
+            "page-title": "Rezerwacja sali {{name}}",
+            "reservation": {
+                "ends": "Zakończenie rezerwacji:",
+                "ends-before-starts": "Początek rezerwacji musi poprzedzać jej zakończenie",
+                "starts": "Rozpoczęcie rezerwacji:"
+            },
+            "tab": {
+                "cancel": "Anuluj rezerwację",
+                "edit": "Edytuj rezerwację"
+            }
+        }
+    }
+}

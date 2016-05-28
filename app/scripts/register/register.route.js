@@ -12,7 +12,12 @@
             parent: 'root',
             url: '/register',
             templateUrl: 'views/register/register.html',
-            controller: 'RegisterController'
+            controller: 'RegisterController',
+            resolve: {
+                translations: [ 'loadTranslations', function( loadTranslations ){
+                        return loadTranslations( 'register' );
+                    } ]
+            }
         } );
     }
 })();

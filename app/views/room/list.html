@@ -1,15 +1,13 @@
 <div class="row">
     <div class="col-sm-8">
-
         <h3 translate-once="room-list.label.rooms">
             Rooms
-
         </h3>
     </div>
     <div class="col-sm-4 col-md-2 col-md-offset-2">
         <button class="btn btn-success btn-lg pull-right list-header-button" ng-click="addRoom()">
             <i class="fa fa-plus-circle"></i>&nbsp;
-            Add Room
+            <span translate-once="room-list.button.add">Add Room</span>
         </button>
     </div>
 </div>
@@ -29,7 +27,7 @@
         <div class="col-xs-2 text-center" translate-once="room-list.fitler.computerStationCount">Count of computer stations</div>
         <div class="col-xs-1 text-center" translate-once="room-list.fitler.projector">Projector</div>
         <div class="col-xs-1 text-center" translate-once="room-list.fitler.blackboard">Blackboard</div>
-        <div class="col-xs-1 text-center" translate-once="room-list.fitler.usability">Usability</div>
+        <div class="col-xs-1 text-center" translate-once="room-list.fitler.usable">Usability</div>
         <div class="col-xs-1 text-center" translate-once="room-list.fitler.manage" has-authority="ADMIN">Manage</div>
     </div>
     <div class="row row-custom" ng-repeat="room in rooms">
@@ -55,15 +53,16 @@
             <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-2x fa-cog"></i>
             </a>
-            <ul class="dropdown-menu">
-                <li><a href="" ng-click="openEditRoomModal( room )"><i class="fa fa-pencil"></i> Edit</a></li>
+            <ul class="dropdown-menu pull-right">
+                <li><a href="" ng-click="editRoom( room )"><i class="fa fa-pencil"></i> <span translate-once="room-list.button.edit">Edit</span></a></li>
                 <li>
                     <a href="" ng-click="changeRoomUsability( room )">
-                        <i class="fa fa-power-off"></i> 
-                        <span ng-if="room.isUsable">Mark as not usable</span>
-                        <span ng-if="!room.isUsable">Mark as usable</span>
+                        <i class="fa" ng-class="{'fa-toggle-on': !room.isUsable, 'fa-toggle-off': room.isUsable}"></i> 
+                        <span ng-if="room.isUsable" translate-once="room-list.button.mark-as-not-usable">Mark as not usable</span>
+                        <span ng-if="!room.isUsable" translate-once="room-list.button.mark-as-usable">Mark as usable</span>
                     </a>
                 </li>
-            </ul></div>
+            </ul>
+        </div>
     </div>
 </div>

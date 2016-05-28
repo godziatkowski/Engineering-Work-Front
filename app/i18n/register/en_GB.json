@@ -1,0 +1,37 @@
+{
+    "register-page": {
+        "button": {
+            "sign-up": "Sign up"
+        },
+        "label": {
+            "first-name": {
+                "first-name": "First name",
+                "required": "First name is required",
+                "tooLong": "First name too long. It can contain maximum {{max}} characters"
+            },
+            "last-name": {
+                "last-name": "Last name",
+                "required": "Last name is required",
+                "tooLong": "Last name too long. It can contain maximum {{max}} characters"
+            },
+            "login": {
+                "already-in-use": "Login is already in use",
+                "login": "Login",
+                "pattern": "Login contains invalid characters",
+                "required": "Login is required",
+                "tooLong": "Login too long. It can contain maximum {{max}} characters",
+                "tooShort": "Login too short. It has to be at least {{min}} characters long"
+            },
+            "password": {
+                "confirm": "Confirm password",
+                "do-not-match": "Passwords don't match",
+                "password": "Password",
+                "required": "Password is required",
+                "tooLong": "Password too long. It can contain maximum {{max}} characters",
+                "tooShort": "Password too short. It has to be at least {{min}} characters long"
+            },
+            "sign-in": "Sign in to existing account",
+            "sign-up": "Sign up"
+        }
+    }
+}

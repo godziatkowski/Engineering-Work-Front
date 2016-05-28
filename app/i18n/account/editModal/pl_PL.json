@@ -1,0 +1,29 @@
+{
+    "account-edit-modal": {
+        "button": {
+            "cancel": "Anuluj",
+            "save": "Zapisz"
+        },
+        "label": {
+            "first-name": {
+                "first-name": "Imię",
+                "required": "Imię jest wymagane",
+                "tooLong": "Imię jest zbyt długie, nie może być dłuższe niż {{max}} znaków"
+            },
+            "last-name": {
+                "last-name": "Nazwisko",
+                "required": "Nazwisko jest wymagane",
+                "tooLong": "Nazwisko jest zbyt długie, nie może być dłuższe niż {{max}} znaków"
+            },
+            "login": {
+                "already-in-use": "Login jest już używany",
+                "login": "Login",
+                "pattern": "Login nie spełnia wymaganego formatu",
+                "required": "Login jest wymagany",
+                "tooLong": "Login jest zbyt długi, nie może być dłuższa niż {{max}} znaków",
+                "tooShort": "Login jest zbyt krótki, nie może być krótsza niż {{min}} znaków"
+            },
+            "page-title": "Edytuj dane konta"
+        }
+    }
+}

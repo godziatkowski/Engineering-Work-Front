@@ -1,19 +1,17 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6 col-md-4 col-md-offset-4">
-            <h1 class="text-center login-title">Sign up </h1>
+            <h1 class="text-center login-title" translate-once="register-page.label.sign-up">Sign up </h1>
             <div class="account-wall">
-                <img class="profile-img" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+                <img class="profile-img" src="../../img/user.png"
                      alt="">
-                <div class="alert alert-danger" ng-show="errors.usernameAlreadyExists">
-                    User with that username already exists
-                </div>
                 <form class="form-signin" name="registerForm" ng-submit="register( $event )" novalidate>
                     <span id="reauth-email" class="reauth-email"></span>
                     <input type="text"
                            class="form-control"
                            name="username"
-                           placeholder="Username"
+                           translate=""
+                           translate-attr-placeholder="register-page.label.login" 
                            ng-model="username"
                            ng-model-options="{ debounce: 250 }"
                            required
@@ -22,92 +20,116 @@
                            ng-pattern="constraints.loginPattern"
                            autofocus>
 
-                    <p class="text-danger" ng-show="submitted && registerForm.username.$error.minlength">
-                        Username too short. It has to be at least 3 characters long
+                    <p class="text-danger" ng-show="submitted && registerForm.username.$error.minlength"
+                       translate="register-page.label.login.tooShort"
+                       translate-values="{min: {{constraints.loginMin}}}">
+                        Login too short. It has to be at least 3 characters long
                     </p>
-                    <p class="text-danger" ng-show="submitted && registerForm.username.$error.maxlength">
-                        Username too long. It can contain maximum 20 characters
+                    <p class="text-danger" ng-show="submitted && registerForm.username.$error.maxlength"
+                       translate="register-page.label.login.tooLong"
+                       translate-values="{max: {{constraints.loginMax}}}">
+                        Login too long. It can contain maximum 20 characters
                     </p>
-                    <p class="text-danger" ng-show="submitted && registerForm.username.$error.pattern">
-                        Username contains invalid characters
+                    <p class="text-danger" ng-show="submitted && registerForm.username.$error.pattern"
+                       translate-once="register-page.label.login.pattern">
+                        Login contains invalid characters
                     </p>
-                    <p class="text-danger" ng-show="submitted && registerForm.username.$error.required">
-                        Username is required
+                    <p class="text-danger" ng-show="submitted && registerForm.username.$error.required"
+                       translate-once="register-page.label.login.required">
+                        Login is required
                     </p>
-                    <p class="text-danger" ng-show="errors['loginAlreadyInUse']">
-                        Username is already in use
+                    <p class="text-danger" ng-show="errors['loginAlreadyInUse']"
+                       translate-once="register-page.label.login.already-in-use">
+                        Login is already in use
                     </p>
 
                     <input type="password"
                            class="form-control"
                            name="password"
-                           placeholder="Password"
+                           translate=""
+                           translate-attr-placeholder="register-page.label.password" 
                            ng-model="password"
                            ng-model-options="{ debounce: 250 }"
                            required
                            ng-minlength="constraints.passwordMin"
                            ng-maxlength="constraints.passwordMax">
 
-                    <p class="text-danger" ng-show="submitted && registerForm.password.$error.minlength">
+                    <p class="text-danger" ng-show="submitted && registerForm.password.$error.minlength"
+                       translate="register-page.label.password.tooShort"
+                       translate-values="{min: {{constraints.passwordMin}}}">
                         Password too short. It has to be at least 3 characters long
                     </p>
-                    <p class="text-danger" ng-show="submitted && registerForm.password.$error.maxlength">
+                    <p class="text-danger" ng-show="submitted && registerForm.password.$error.maxlength"
+                       translate="register-page.label.password.tooLong"
+                       translate-values="{max: {{constraints.passwordMax}}}">
                         Password too long. It can contain maximum 20 characters
                     </p>
-                    <p class="text-danger" ng-show="submitted && registerForm.password.$error.required">
+                    <p class="text-danger" ng-show="submitted && registerForm.password.$error.required"
+                       translate-once="register-page.label.password.required">
                         Password is required
                     </p>
 
                     <input type="password"
                            class="form-control"
                            name="confirmPassword"
-                           placeholder="Confirm password"
+                           translate=""
+                           translate-attr-placeholder="register-page.label.password.confirm" 
                            ng-model="confirmPassword"
                            ng-model-options="{ debounce: 250 }"
                            required>
 
-                    <p class="text-danger" ng-show="submitted && password !== confirmPassword">
+                    <p class="text-danger" ng-show="submitted && password !== confirmPassword"
+                       translate-once="register-page.label.password.do-not-match">
                         Passwords don't match
                     </p>
                     <br/>
                     <input type="text"
                            class="form-control"
                            name="firstName"
-                           placeholder="First Name"
+                           translate=""
+                           translate-attr-placeholder="register-page.label.first-name" 
                            ng-model="firstName"
                            ng-model-options="{ debounce: 250 }"
                            required
                            ng-maxlength="constraints.firstNameMax">
 
-                    <p class="text-danger" ng-show="submitted && registerForm.firstName.$error.maxlength">
+                    <p class="text-danger" ng-show="submitted && registerForm.firstName.$error.maxlength"
+                       translate="register-page.label.first-name.tooLong"
+                       translate-values="{max: {{constraints.firstNameMax}}}">
                         First name too long. It can contain maximum 25 characters
                     </p>
-                    <p class="text-danger" ng-show="submitted && registerForm.firstName.$error.required">
+                    <p class="text-danger" ng-show="submitted && registerForm.firstName.$error.required"
+                       translate-once="register-page.label.first-name.required">
                         First name is required
                     </p>
 
                     <input type="text"
                            class="form-control"
                            name="lastName"
-                           placeholder="Last Name"
+                           translate=""
+                           translate-attr-placeholder="register-page.label.last-name" 
                            ng-model="lastName"
                            ng-model-options="{ debounce: 250 }"
                            required
                            ng-maxlength="constraints.lastNameMax">
-                    <p class="text-danger" ng-show="submitted && registerForm.lastName.$error.maxlength">
+                    <p class="text-danger" ng-show="submitted && registerForm.lastName.$error.maxlength"
+                       translate="register-page.label.last-name.tooLong"
+                       translate-values="{max: {{constraints.lastNameMax}}}">
                         Last name too long. It can contain maximum 50 characters
                     </p>
-                    <p class="text-danger" ng-show="submitted && registerForm.lastName.$error.required">
+                    <p class="text-danger" ng-show="submitted && registerForm.lastName.$error.required"
+                       translate-once="register-page.label.last-name.required">
                         Last name is required
                     </p>
 
                     <button class="btn btn-lg btn-primary btn-block btn-signin"
-                            type="submit">
+                            type="submit"
+                            translate-once="register-page.button.sign-up">
                         Sign up
                     </button>
                 </form>
             </div>
-            <a class="text-center new-account" ui-sref="login">Sign in to existing account</a>
+            <a class="text-center new-account" ui-sref="login" translate-once="register-page.label.sign-in">Sign in to existing account</a>
         </div>
     </div>
 </div>

@@ -1,0 +1,13 @@
+{
+    "user-grant-admin-rigths-modal": {
+        "button": {
+            "cancel": "Anuluj",
+            "confirm": "Przyznaj rolę"
+        },
+        "label": {
+            "confirmation": "Czy napewno chcesz przyznać prawa administratora temu użytkownikowi?",
+            "page-title": "Przyznaj prawa administratora użytkownikowi",
+            "warn": "Tej akcji nie można cofnąć!"
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "login-page": {
+        "button": {
+            "sign-in": "Sign in"
+        },
+        "label": {
+            "create-account": "Create an account",
+            "sign-in": "Sign in",
+            "password": "Password",
+            "username": "Login"
+        }
+    }
+}

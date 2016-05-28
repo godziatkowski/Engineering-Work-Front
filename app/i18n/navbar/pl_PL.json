@@ -2,7 +2,7 @@
     "navbar": {
         "label": {
             "accountData": "Profil",
-            "buildings": "Budynki",
+            "rooms": "Pomieszczenia",
             "logout": "Wyloguj",
             "users": "Użytkownicy"
         },
