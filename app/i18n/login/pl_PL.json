@@ -4,7 +4,8 @@
             "sign-in": "Zaloguj"
         },
         "label": {
-            "create-account":"Zarejestruj się",
+            "create-account": "Zarejestruj się",
+            "incorrect": "Błędne dane logowania",
             "sign-in": "Zaloguj się",
             "password": "Hasło",
             "username": "Login"

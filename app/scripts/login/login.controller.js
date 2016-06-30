@@ -20,6 +20,8 @@
             } ).then( function(){
                 $scope.authenticationError = false;
                 $state.go( 'dashboard' );
+            }, function(){
+                $scope.authenticationError = true;                
             } ).catch( function(){
                 $scope.authenticationError = true;
             } );

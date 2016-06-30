@@ -5,6 +5,7 @@
         },
         "label": {
             "create-account": "Create an account",
+            "incorrect": "Incorrect credentials",
             "sign-in": "Sign in",
             "password": "Password",
             "username": "Login"

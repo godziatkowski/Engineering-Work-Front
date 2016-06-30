@@ -20,6 +20,9 @@
                            required>
                     <button class="btn btn-lg btn-primary btn-block" type="submit" translate-once="login-page.button.sign-in">Sign in</button>
                 </form>
+                <p class="text-danger text-center" ng-if="authenticationError" translate-once="login-page.label.incorrect">
+                    Incorrect credentials
+                </p>
             </div>
             <a  class="text-center new-account" ui-sref="register" translate-once="login-page.label.create-account">Create an account </a>
         </div>
