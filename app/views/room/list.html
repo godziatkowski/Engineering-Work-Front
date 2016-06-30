@@ -41,7 +41,14 @@
                 {{room.name}}
             </a>
         </div>
-        <div class="col-xs-2">Opiekun</div>
+        <div class="col-xs-2">
+            <div ng-if="room.keeper">
+                {{room.keeper.firstName}} {{room.keeper.lastName}} <small class="text-muted">({{room.keeper.login}})</small>
+            </div>
+            <div ng-if="!room.keeper">
+                No keeper assigned
+            </div>
+        </div>
         <div class="col-xs-1 text-center">
             <div ng-switch="room.roomType">
                 <span ng-switch-when="LECTURE_HALL" translate-once="room-list.label.roomType.auditory">Lecture hall</span>
@@ -67,6 +74,13 @@
                         <span ng-if="!room.isUsable" translate-once="room-list.button.mark-as-usable">Mark as usable</span>
                     </a>
                 </li>
+                <li>
+                    <a href="" ng-click="changeKeeper( room )">
+                        <i class="fa" ng-class="{'fa-user-plus': !room.keeper, 'fa-user-times': room.keeper}"></i> 
+                        <span ng-if="!room.keeper" translate-once="room-list.button.assignKeeper">Assign keeper</span>
+                        <span ng-if="room.keeper" translate-once="room-list.button.clearKeeper">Clear keeper</span>
+                    </a>
+                </li>                
             </ul>
         </div>
     </div>

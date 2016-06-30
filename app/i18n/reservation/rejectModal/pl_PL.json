@@ -1,0 +1,18 @@
+{
+    "reservation-reject-modal": {
+        "button": {
+            "cancel": "Anuluj",
+            "reject": "Odrzuć"
+        },
+        "label": {
+            "createdAt": "Zgłoszono:",
+            "cannotBeUndone": "Tej akcji nie można cofnąć!",
+            "date": "W dniu:",
+            "end": "Zakończenie:",
+            "page-title": "Czy napewno chcesz odrzucić tą rezerwację?",
+            "reservationist": "Rezerwujący:",
+            "room":"Pomieszczenie:",
+            "start":"Rozpoczęcie:"
+        }
+    }
+}

@@ -1,0 +1,36 @@
+<div class="modal-header" >
+    <span translate-once="room-keeper-modals.label.assign">Assign keeper for</span> {{room.name}}
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">            
+            <select ng-model="keeper" ng-options="user.login for user in users"></select>
+        </div>
+    </div>
+    <div ng-if="keeper">
+        <div class="row" >
+            <div class="col-xs-4">            
+                <label translate-once="room-keeper-modals.label.firstName">
+                    First name
+                </label>
+            </div>
+            <div class="col-xs-4">            
+                {{keeper.firstName}}
+            </div>
+        </div>
+        <div class="row" >
+            <div class="col-xs-4">            
+                <label translate-once="room-keeper-modals.label.lastName">Last name</label>
+            </div>
+            <div class="col-xs-4">
+                {{keeper.lastName}}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-success" type="submit" ng-click="save()"
+            translate-once="room-keeper-modals.button.assign"> Assign</button>
+    <button class="btn btn-danger" type="reset" ng-click="$dismiss()"
+            translate-once="room-keeper-modals.button.cacel"> Cancel</button>
+</div>

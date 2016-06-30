@@ -41,17 +41,22 @@
                 url: config.apiUrl + '/room/:id/markAsNotUsable',
                 method: 'PUT'
             
+            },
+            assignKeeper: {
+                url: config.apiUrl + '/room/:id/assignKeeper',
+                method: 'PUT'
+            
+            },
+            clearKeeper: {
+                url: config.apiUrl + '/room/:id/clearKeeper',
+                method: 'PUT'
+            
             }
             
         } );
 
         function transformResponse( data ){
             data = angular.fromJson( data );
-//            if($.isArray(data)){
-//                for( var i in data){
-//                    data[i] = angular.fromJson(data[i]);
-//                }
-//            }
             return data;
         }
 

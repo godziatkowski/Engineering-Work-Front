@@ -17,8 +17,7 @@ angular.module( 'roomBookingApp' )
                                         setVisible();
                                     }
 
-                                    result =
-                                            Principal.hasAnyAuthority( authorities );
+                                    result = Principal.hasAnyAuthority( authorities );
                                     if(result){
                                         setVisible();
                                     } else{

@@ -1,0 +1,16 @@
+{
+    "room-keeper-modals": {
+        "button": {
+            "assign": "Przydziel opiekuna",
+            "cancel": "Anuluj",
+            "clear": "Usuń opiekuna"
+        },
+        "label": {
+            "assign": "Przydziel opiekuna dla sali ",
+            "clear": "Usuń opiekuna sali ",
+            "firstName": "Imie",
+            "lastName": "Nazwisko",
+            "login": "Użytkownik"
+        }
+    }
+}

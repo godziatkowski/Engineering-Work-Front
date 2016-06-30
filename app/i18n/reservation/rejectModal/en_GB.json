@@ -1,0 +1,18 @@
+{
+    "reservation-reject-modal": {
+        "button": {
+            "cancel": "Cancel",
+            "reject": "Reject"
+        },
+        "label": {
+            "createdAt": "Requested at:",
+            "cannotByUndone": "This action canno be reverted!",
+            "date": "At:",
+            "end": "Ends at:",
+            "page-title": "Are you sure you want to reject this reservation?",
+            "reservationist": "Reservationist:",
+            "room": "Room:",
+            "start": "Starts at:"
+        }
+    }
+}

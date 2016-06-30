@@ -1,0 +1,16 @@
+{
+    "room-keeper-modals": {
+        "button": {
+            "assign": "Assign keeper",
+            "cancel": "No",
+            "clear": "Clear keeper"
+        },
+        "label": {
+            "assign": "Assign keeper for room ",
+            "clear": "Remove keeper for room ",
+            "firstName": "Name",
+            "lastName": "Surname",
+            "login": "User"
+        }
+    }
+}
