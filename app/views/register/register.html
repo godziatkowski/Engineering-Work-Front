@@ -10,8 +10,7 @@
                     <input type="text"
                            class="form-control"
                            name="username"
-                           translate=""
-                           translate-attr-placeholder="register-page.label.login" 
+                           placeholder="{{'register-page.label.login'|translate}}"
                            ng-model="username"
                            ng-model-options="{ debounce: 250 }"
                            required
@@ -41,53 +40,12 @@
                     <p class="text-danger" ng-show="errors['loginAlreadyInUse']"
                        translate-once="register-page.label.login.already-in-use">
                         Login is already in use
-                    </p>
-
-                    <input type="password"
-                           class="form-control"
-                           name="password"
-                           translate=""
-                           translate-attr-placeholder="register-page.label.password" 
-                           ng-model="password"
-                           ng-model-options="{ debounce: 250 }"
-                           required
-                           ng-minlength="constraints.passwordMin"
-                           ng-maxlength="constraints.passwordMax">
-
-                    <p class="text-danger" ng-show="submitted && registerForm.password.$error.minlength"
-                       translate="register-page.label.password.tooShort"
-                       translate-values="{min: {{constraints.passwordMin}}}">
-                        Password too short. It has to be at least 3 characters long
-                    </p>
-                    <p class="text-danger" ng-show="submitted && registerForm.password.$error.maxlength"
-                       translate="register-page.label.password.tooLong"
-                       translate-values="{max: {{constraints.passwordMax}}}">
-                        Password too long. It can contain maximum 20 characters
-                    </p>
-                    <p class="text-danger" ng-show="submitted && registerForm.password.$error.required"
-                       translate-once="register-page.label.password.required">
-                        Password is required
-                    </p>
-
-                    <input type="password"
-                           class="form-control"
-                           name="confirmPassword"
-                           translate=""
-                           translate-attr-placeholder="register-page.label.password.confirm" 
-                           ng-model="confirmPassword"
-                           ng-model-options="{ debounce: 250 }"
-                           required>
-
-                    <p class="text-danger" ng-show="submitted && password !== confirmPassword"
-                       translate-once="register-page.label.password.do-not-match">
-                        Passwords don't match
-                    </p>
+                    </p>                    
                     <br/>
                     <input type="text"
                            class="form-control"
                            name="firstName"
-                           translate=""
-                           translate-attr-placeholder="register-page.label.first-name" 
+                           placeholder="{{'register-page.label.first-name'|translate}}" 
                            ng-model="firstName"
                            ng-model-options="{ debounce: 250 }"
                            required
@@ -106,8 +64,7 @@
                     <input type="text"
                            class="form-control"
                            name="lastName"
-                           translate=""
-                           translate-attr-placeholder="register-page.label.last-name" 
+                           placeholder="{{'register-page.label.last-name'|translate}}" 
                            ng-model="lastName"
                            ng-model-options="{ debounce: 250 }"
                            required
@@ -133,3 +90,4 @@
         </div>
     </div>
 </div>
+

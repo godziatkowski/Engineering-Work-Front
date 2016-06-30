@@ -15,20 +15,12 @@
                 "tooLong": "Nazwisko jest zbyt długie, nie może być dłuższe niż {{max}} znaków"
             },
             "login": {
-                "already-in-use": "Login jest już używany",
-                "login": "Login",
-                "pattern": "Login nie spełnia wymaganego formatu",
-                "required": "Login jest wymagany",
-                "tooLong": "Login jest zbyt długi, nie może być dłuższa niż {{max}} znaków",
-                "tooShort": "Login jest zbyt krótki, nie może być krótsza niż {{min}} znaków"
-            },
-            "password": {
-                "confirm": "Powtórz hasło",
-                "do-not-match": "Podane hasła nie pokrywają się",
-                "password": "Hasło",
-                "required": "Hasło jest wymagane",
-                "tooLong": "Podane hasło jest za długie - maksymalna ilość znaków to {{max}}",
-                "tooShort": "Podane hasło jest za krótkie - minimalna ilość znaków to {{min}}"
+                "already-in-use": "Email jest już używany",
+                "login": "Email",
+                "pattern": "Email nie spełnia wymaganego formatu",
+                "required": "Email jest wymagany",
+                "tooLong": "Email jest zbyt długi, nie może być dłuższa niż {{max}} znaków",
+                "tooShort": "Email jest zbyt krótki, nie może być krótsza niż {{min}} znaków"
             },
             "sign-in": "Zaloguj się do istniejącego konta",
             "sign-up": "Zarejestruj się"

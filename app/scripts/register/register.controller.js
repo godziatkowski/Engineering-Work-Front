@@ -5,23 +5,20 @@
             .module( 'roomBookingApp' )
             .controller( 'RegisterController', RegisterController );
 
-    RegisterController.$inject = [ '$scope', '$rootScope', '$state', 'toaster',
+    RegisterController.$inject = [ '$scope', '$state', 'toaster',
         'Auth' ];
 
-    function RegisterController( $scope, $rootScope, $state, toaster, Auth ){
+    function RegisterController( $scope, $state, toaster, Auth ){
         $scope.username = '';
-        $scope.password = '';
         $scope.confirmPassword = '';
         $scope.firstName = '';
         $scope.lastName = '';
         $scope.submitted = false;
         $scope.errors = { };
         $scope.constraints = {
-            loginMax: 20,
+            loginMax: 255,
             loginMin: 3,
-            loginPattern: '^[a-zA-Z0-9]*$',
-            passwordMax: 60,
-            passwordMin: 4,
+            loginPattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+p\.lodz\.pl))$/,
             firstNameMax: 50,
             lastNameMax: 50
         };
@@ -34,26 +31,15 @@
 
             if($scope.registerForm.$invalid){
                 return;
-            } else if($scope.password !== $scope.confirmPassword){
-                return;
             }
-
             $scope.errors = { };
 
             Auth.createAccount( {
                 login: $scope.username,
-                password: $scope.password,
                 firstName: $scope.firstName,
                 lastName: $scope.lastName
             } ).then( function(){
-                Auth.login( {
-                    username: $scope.username,
-                    password: $scope.password,
-                    rememberMe: false
-                } ).then( function(){
-                    toaster.pop( 'success', 'Successfully registered' );
-                    $state.go( 'dashboard' );
-                } );
+                $state.go( 'login' );
             } ).catch( function( reason ){
                 if(loginIsAlreadyInUse( reason )){
                     $scope.errors['loginAlreadyInUse'] = true;
