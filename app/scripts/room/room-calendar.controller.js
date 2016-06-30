@@ -22,11 +22,13 @@
                 editable: false,
                 eventClick: openEditReservationModal,
                 slotEventOverlap: false,
+                minTime: '08:00:00',
+                maxTime: '20:00:00',
                 header: {
                     left: 'title',
-                    right: 'month agendaWeek agendaDay today prev,next'
+                    right: 'month agendaWeek today prev,next'
                 },
-                height: 800,
+                height: 598,
                 scrollTime: '00:00:00',
                 select: openReservationModal,
                 selectable: true,
@@ -105,6 +107,7 @@
 
         $rootScope.$on( 'languageChange', function(){
             $scope.language = resolveLanguage();
+            reloadReservations();
         } );
 
         function resolveLanguage(){

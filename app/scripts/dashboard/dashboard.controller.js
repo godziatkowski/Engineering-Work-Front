@@ -19,12 +19,14 @@
                 defaultView: 'agendaWeek',
                 editable: false,
                 eventClick: openEditReservationModal,
+                minTime: '08:00:00',
+                maxTime: '20:00:00',
                 slotEventOverlap: false,
                 header: {
                     left: 'title',
-                    right: 'month agendaWeek agendaDay today prev,next'
+                    right: 'month agendaWeek today prev,next'
                 },
-                height: 800,
+                height: 598,
                 scrollTime: '00:00:00',
                 slotLabelFormat: 'H:mm',
                 timeFormat: 'DD MMM H:mm',
@@ -65,6 +67,7 @@
 
         $rootScope.$on( 'languageChange', function(){
             $scope.language = resolveLanguage();
+            reloadReservations();
         } );
 
         function resolveLanguage(){
