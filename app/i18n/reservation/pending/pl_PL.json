@@ -1,0 +1,19 @@
+{
+    "reservation-pending": {
+        "button": {
+            "accept": "Akceptuj",
+            "reject": "Odrzuc"
+        },
+        "label": {
+            "createdAt": "Zgłoszono",
+            "date": "W dniu",
+            "decision": "Decyzja",
+            "end": "Zakończenie",
+            "or": " lub ",
+            "page-title": "Rezerwacje oczekujące na akcpetację",
+            "reservationist":"Rezerwujący",
+            "room":"Pomieszczenie",
+            "start":"Rozpoczęcie"
+        }
+    }
+}

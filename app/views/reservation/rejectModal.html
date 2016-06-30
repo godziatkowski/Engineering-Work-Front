@@ -1,0 +1,45 @@
+<div class="modal-header">
+    <h3 class="modal-title">
+        <span translate-once="reservation-reject-modal.label.page-title">Reject</span>
+    </h3>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-xs-4 col-xs-offset-2"> <label translate-once="reservation-reject-modal.label.reservationist">Reserved by</label></div>
+        <div class="col-xs-6">
+            <span>{{reservation.userFirstName}}</span>&nbsp;<span>{{reservation.userLastName}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 col-xs-offset-2"> <label translate-once="reservation-reject-modal.label.room">Room</label></div>
+        <div class="col-xs-6">{{reservation.startDate}}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 col-xs-offset-2"> <label translate-once="reservation-reject-modal.label.start">Starts at</label></div>
+        <div class="col-xs-6">{{reservation.startDate}}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 col-xs-offset-2"> <label translate-once="reservation-reject-modal.label.end">Ends at</label></div>
+        <div class="col-xs-6">{{reservation.endDate}}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 col-xs-offset-2"> <label translate-once="reservation-reject-modal.label.date">At</label></div>
+        <div class="col-xs-6">{{reservation.startDate}}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 col-xs-offset-2"> <label translate-once="reservation-reject-modal.label.createdAt">Asked at</label></div>
+        <div class="col-xs-6">{{reservation.createdAt}}</div>
+    </div>
+    <div class="alert alert-warning text-center" translate-once="reservation-reject-modal.label.cannotBeUndone">
+        This action cannot be undone!
+    </div>
+</div>
+
+<div class="modal-footer">
+    <button id="reject-modal-modal-button-reject" class="btn btn-success" type="submit" ng-click="reject();">
+        <i class="fa fa-save"></i> <span translate-once="reservation-reject-modal.button.reject">Accept</span>
+    </button>
+    <button id="reject-modal-modal-button-cancel" class="btn btn-danger" type="button" ng-click="$dismiss()">
+        <i class="fa fa-times"></i> <span translate-once="reservation-reject-modal.button.cancel">Cancel</span>
+    </button>
+</div>

@@ -4,6 +4,7 @@
             "accountData": "Account Data",
             "rooms": "Rooms",
             "logout": "Logout",
+            "pendingReservations": "Pending Reservations",
             "users": "Users"
         },
         "language": {

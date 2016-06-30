@@ -1,0 +1,17 @@
+{
+    "reservation-accept-modal": {
+        "button": {
+            "accept": "Accept",
+            "cancel": "Cancel"
+        },
+        "label": {
+            "createdAt": "Requested at:",
+            "date": "At:",
+            "end": "Ends at:",
+            "page-title": "Are you sure you want to accept this reservation?",
+            "reservationist": "Reservationist:",
+            "room":"Room:",
+            "start":"Starts at:"
+        }
+    }
+}

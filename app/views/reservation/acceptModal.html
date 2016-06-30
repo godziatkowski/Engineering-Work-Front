@@ -1,0 +1,42 @@
+<div class="modal-header">
+    <h3 class="modal-title">
+        <span translate-once="reservation-accept-modal.label.page-title">Accept</span>
+    </h3>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-xs-4 col-xs-offset-2"> <label translate-once="reservation-accept-modal.label.reservationist">Reserved by</label></div>
+        <div class="col-xs-6">
+            <span>{{reservation.userFirstName}}</span>&nbsp;<span>{{reservation.userLastName}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 col-xs-offset-2"> <label translate-once="reservation-accept-modal.label.room">Room</label></div>
+        <div class="col-xs-6">{{reservation.startDate}}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 col-xs-offset-2"> <label translate-once="reservation-accept-modal.label.start">Starts at</label></div>
+        <div class="col-xs-6">{{reservation.startDate}}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 col-xs-offset-2"> <label translate-once="reservation-accept-modal.label.end">Ends at</label></div>
+        <div class="col-xs-6">{{reservation.endDate}}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 col-xs-offset-2"> <label translate-once="reservation-accept-modal.label.date">At</label></div>
+        <div class="col-xs-6">{{reservation.startDate}}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 col-xs-offset-2"> <label translate-once="reservation-accept-modal.label.createdAt">Asked at</label></div>
+        <div class="col-xs-6">{{reservation.createdAt}}</div>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <button id="accept-modal-modal-button-accept" class="btn btn-success" type="submit" ng-click="accept();">
+        <i class="fa fa-save"></i> <span translate-once="reservation-accept-modal.button.accept">Accept</span>
+    </button>
+    <button id="accept-modal-modal-button-cancel" class="btn btn-danger" type="button" ng-click="$dismiss()">
+        <i class="fa fa-times"></i> <span translate-once="reservation-accept-modal.button.cancel">Cancel</span>
+    </button>
+</div>

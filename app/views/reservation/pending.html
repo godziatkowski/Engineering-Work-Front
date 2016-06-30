@@ -1,0 +1,42 @@
+<h3>
+    <span translate-once="reservation-pending.label.page-title">Pending reservations</span>
+</h3>
+
+<div class="row row-header-top-with-bottom">
+    <div class="col-xs-2" translate-once="reservation-pending.label.reservationist"></div>
+    <div class="col-xs-1 text-center" translate-once="reservation-pending.label.room"></div>
+    <div class="col-xs-3 text-center">
+        <span translate-once="reservation-pending.label.start"></span>&nbsp;-&nbsp;
+        <span translate-once="reservation-pending.label.end"></span>
+    </div>    
+    <div class="col-xs-2 text-center" translate-once="reservation-pending.label.date"></div>
+    <div class="col-xs-2 text-center" translate-once="reservation-pending.label.createdAt"></div>
+    <div class="col-xs-2 text-center" translate-once="reservation-pending.label.decision"></div>
+</div>
+<div class="row row-custom" ng-repeat="reservation in pendingReservations">
+    <div class="col-xs-2"><span>{{reservation.userFirstName}}</span>&nbsp;<span>{{reservation.userLastName}}</span></div>
+    <div class="col-xs-1 text-center">{{reservation.room.name}}</div>
+    <div class="col-xs-3 text-center">
+        <span>{{reservation.startDate}}</span>&nbsp;-&nbsp;
+        <span>{{reservation.endDate}}</span>
+    </div>    
+    <div class="col-xs-2 text-center">{{reservation.startDate}}</div>
+    <div class="col-xs-2 text-center">{{reservation.createdAt}}</div>
+    <div class="col-xs-2">
+        <div class="row">
+            <div class="col-xs-5">
+                <button class="btn btn-success btn-block pull-left" ng-click="accept(reservation)">
+                    <span class="fa fa-check"></span>
+                    <span translate-once="reservation-pending.button.accept"></span>
+                </button>
+            </div>
+            <div class="col-xs-2 text-center" translate-once="reservation-pending.label.or"></div>
+            <div class="col-xs-5">
+                <button class="btn btn-danger btn-block pull-right" ng-click="reject(reservation)">
+                    <span class="fa fa-times"></span>
+                    <span translate-once="reservation-pending.button.reject"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

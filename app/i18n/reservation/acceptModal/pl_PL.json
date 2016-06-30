@@ -1,0 +1,17 @@
+{
+    "reservation-accept-modal": {
+        "button": {
+            "accept": "Akceptuj",
+            "cancel": "Anuluj"
+        },
+        "label": {
+            "createdAt": "Zgłoszono:",
+            "date": "W dniu:",
+            "end": "Zakończenie:",
+            "page-title": "Czy napewno chcesz zaakceptować tą rezerwację?",
+            "reservationist": "Rezerwujący:",
+            "room":"Pomieszczenie:",
+            "start":"Rozpoczęcie:"
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "reservation-pending": {
+        "button": {
+            "accept": "Accept",
+            "reject": "Reject"
+        },
+        "label": {
+            "createdAt": "Requested at",
+            "date": "Day",
+            "decision": "Decision",
+            "end": "Ends at",
+            "or": " or ",
+            "page-title": "Pending reservation",
+            "reservationist": "Reservationist",
+            "room":"Room",
+            "start":"Starts at"
+        }
+    }
+}

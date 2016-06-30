@@ -14,6 +14,12 @@
                     <span translate-once="navbar.label.users">Users</span>
                 </a>
             </span>
+            <span ng-if="identity !== null">                
+                <a class="navbar-brand" ui-sref="reservation.pending" has-any-authority="{'ADMIN', 'ROOM_KEEPER'}">
+                    <i class="fa fa-list"></i>
+                    <span translate-once="navbar.label.pendingReservations">Pending reservations</span>
+                </a>
+            </span>
         </div>
 
         <ul class="nav navbar-nav navbar-right">
