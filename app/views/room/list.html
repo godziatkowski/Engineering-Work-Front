@@ -1,9 +1,14 @@
 <div class="row">
     <div class="col-sm-8">
-        <h3 translate-once="room-list.label.rooms">
-            Rooms
+        <h3 >
+            <span translate-once="room-list.label.rooms">Rooms for floor</span>&nbsp;
+            <select ng-init="floor = floors[0]" 
+                    ng-model="floor" 
+                    ng-options="floor for floor in floors"
+                    ng-change="changeDisplayedFloor()">
+            </select>
         </h3>
-    </div>
+    </div>    
     <div class="col-sm-4 col-md-2 col-md-offset-2">
         <button class="btn btn-success btn-lg pull-right list-header-button" ng-click="addRoom()">
             <i class="fa fa-plus-circle"></i>&nbsp;

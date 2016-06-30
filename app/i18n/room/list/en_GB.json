@@ -18,7 +18,7 @@
             "usable": "Usable"
         },
         "label": {
-            "rooms": "Rooms",
+            "rooms": "Rooms on floor",
             "no-rooms": "There aren't any defined rooms.",
             "roomType": {
                 "auditory": "Lecture hall",
