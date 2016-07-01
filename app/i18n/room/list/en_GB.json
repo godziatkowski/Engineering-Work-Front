@@ -2,6 +2,8 @@
     "room-list": {
         "button": {
             "add": "Add room",
+            "assignKeeper": "Assign room keeper",
+            "clearKeeper": "Remove room keeper",
             "edit": "Edit room",
             "mark-as-not-usable": "Mark as not usable",
             "mark-as-usable": "Mark as usable"

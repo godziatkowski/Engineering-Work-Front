@@ -2,6 +2,8 @@
     "room-list": {
         "button": {
             "add": "Dodaj pomieszczenie",
+            "assignKeeper": "Przydziel opiekuna sali",
+            "clearKeeper": "Usuń opiekuna sali",
             "edit": "Edytuj pomieszczenie",
             "mark-as-not-usable": "Oznacz jako nie dostępne",
             "mark-as-usable": "Oznacz jako dostępne"
